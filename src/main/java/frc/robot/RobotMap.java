@@ -35,7 +35,12 @@ public class RobotMap {
   public CANSparkMax MotorR1Control;
   public CANSparkMax MotorR2Control;
 
-  public RobotMap(){
+  public RobotMap() {
+    
+    MotorL1 = 2;
+    MotorL2 = 3;
+    MotorR1 = 0;
+    MotorR2 = 1;
 
     MotorL1Control = new CANSparkMax(MotorL1 , MotorType.kBrushless);
     MotorL2Control = new CANSparkMax(MotorL2 , MotorType.kBrushless);
