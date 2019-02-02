@@ -10,6 +10,7 @@ package frc.robot;
 import com.revrobotics.CANEncoder;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 
 
@@ -36,10 +37,13 @@ public class RobotMap {
   public CANSparkMax MotorR1Control;
   public CANSparkMax MotorR2Control;
 
+
   public CANEncoder encoderL1;
   public CANEncoder encoderL2;
   public CANEncoder encoderR1;
   public CANEncoder encoderR2;
+  public DoubleSolenoid HatchMechPiston;
+>>>>>>> Adding pneumatics functionality, not finished yet
 
   public RobotMap() {
     
@@ -57,6 +61,14 @@ public class RobotMap {
     encoderL2 = new CANEncoder(MotorL2Control);
     encoderR1 = new CANEncoder(MotorR1Control);
     encoderR2 = new CANEncoder(MotorR2Control);
+    HatchMechPiston = new DoubleSolenoid(0, 1);
+
+    HatchMechPiston.set(DoubleSolenoid.Value.kOff);
+    HatchMechPiston.set(DoubleSolenoid.Value.kForward);
+    HatchMechPiston.set(DoubleSolenoid.Value.kReverse);
+
+
+>>>>>>> Adding pneumatics functionality, not finished yet
 
 
   }

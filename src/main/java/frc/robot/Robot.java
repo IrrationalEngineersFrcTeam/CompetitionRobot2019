@@ -12,6 +12,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.subsystems.HatchMechanismSubsystem;
+
 
 
 public class Robot extends TimedRobot {
@@ -19,6 +21,8 @@ public class Robot extends TimedRobot {
   public static OI oi;
   public static RobotMap robotmap;
   public static DriveSubsystem drivesub;
+  public static HatchMechanismSubsystem hatchmechsub;
+
 
   
   @Override
@@ -27,7 +31,8 @@ public class Robot extends TimedRobot {
   oi = new OI();
   robotmap = new RobotMap();
   drivesub = new DriveSubsystem();
- 
+  hatchmechsub = new HatchMechanismSubsystem();
+  
 
   }
 
