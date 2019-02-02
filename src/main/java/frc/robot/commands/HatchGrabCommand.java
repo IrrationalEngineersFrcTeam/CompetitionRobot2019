@@ -8,16 +8,22 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
-public class HatchGrabCommand extends Command {
-  public HatchGrabCommand() {
+public class HatchGrabCommand extends Command 
+{
+  public HatchGrabCommand() 
+  {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
+    requires(Robot.hatchmechsub);
   }
 
   // Called just before this Command runs the first time
   @Override
-  protected void initialize() {
+  protected void initialize() 
+  {
+    Robot.hatchmechsub.HatchMechExtend();
   }
 
   // Called repeatedly when this Command is scheduled to run

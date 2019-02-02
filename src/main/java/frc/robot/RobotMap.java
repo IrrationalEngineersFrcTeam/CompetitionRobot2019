@@ -43,7 +43,6 @@ public class RobotMap {
   public CANEncoder encoderR1;
   public CANEncoder encoderR2;
   public DoubleSolenoid HatchMechPiston;
->>>>>>> Adding pneumatics functionality, not finished yet
 
   public RobotMap() {
     
@@ -68,7 +67,6 @@ public class RobotMap {
     HatchMechPiston.set(DoubleSolenoid.Value.kReverse);
 
 
->>>>>>> Adding pneumatics functionality, not finished yet
 
 
   }

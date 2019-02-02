@@ -8,7 +8,6 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.Robot;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 
@@ -23,9 +22,14 @@ public class HatchMechanismSubsystem extends Subsystem
 
   DoubleSolenoid HatchMechPiston = null;
 
-  public HatchMechanismSubsystem()
+  public void HatchMechExtend()
   {
-  HatchMechPiston = new DoubleSolenoid(Robot.robotmap.HatchMechPiston, );
+    HatchMechPiston.set(Value.kForward);
+  }
+
+  public void HatchMechRetract() 
+  {
+    HatchMechPiston.set(Value.kReverse);  
   }
 
   @Override
