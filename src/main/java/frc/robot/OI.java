@@ -22,8 +22,7 @@ public class OI {
   public Joystick StickR;
 
 //Here we have the hatch mechanism button
-  public Button HatchGrabButton;
-  public Button HatchReleaseButton;
+  public Button HatchMechButton;
 
 
 
@@ -33,14 +32,12 @@ public class OI {
     StickL = new Joystick(0);
     StickR = new Joystick(1);
 
-  //This is a standin number, we will change the button number to the correct button number later   
-    HatchGrabButton = new JoystickButton(StickR, 3);
-    HatchReleaseButton = new JoystickButton(StickR, 4);
+    HatchMechButton = new JoystickButton(StickR, 0);
 
   //This method binds the button to a command
   //In this case the hatch button
-    HatchGrabButton.whenPressed(new HatchGrabCommand());
-    HatchReleaseButton.whenPressed(new HatchReleaseCommand());
+    HatchMechButton.whileHeld(new HatchGrabCommand());
+    HatchMechButton.whenReleased(new HatchReleaseCommand());
 
   }
 
