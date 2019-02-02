@@ -26,11 +26,36 @@ public class DriveSubsystem extends Subsystem {
   public void DriveCommand(double SpeedL, double SpeedR){
     //This is the code that actually makes the robot drive! It tells the 
     //proper motor controllers to set the motors to desired speed.
-    Robot.robotmap.MotorL1Control.set(-SpeedL);
-		Robot.robotmap.MotorL2Control.set(-SpeedL);
-		Robot.robotmap.MotorR1Control.set(SpeedR);
-    Robot.robotmap.MotorR2Control.set(SpeedR);
+    Robot.robotmap.MotorL1Control.set(-SpeedL * .5);
+		Robot.robotmap.MotorL2Control.set(-SpeedL * .5);
+		Robot.robotmap.MotorR1Control.set(SpeedR * .5);
+    Robot.robotmap.MotorR2Control.set(SpeedR * .5);
+
+    System.out.println(Robot.robotmap.encoderL1.getVelocity());
+
     
     
+  }
+
+  public void getEncoderRot() {
+
+
+  }
+
+  public double getRightEncoderVel(String side) {
+
+    //get the average of the two encoders on each side for a more accurate value
+    double rightEncVel = (Robot.robotmap.encoderR1.getVelocity() + Robot.robotmap.encoderR2.getVelocity()) / 2;
+    double leftEncVel = (Robot.robotmap.encoderL1.getVelocity() + Robot.robotmap.encoderL2.getVelocity()) / 2;
+    //if the "side" variable delivered equals right, return the right encoder velocity value
+    if (side.equals("right")) {
+      return rightEncVel;
+    //if the "side" variable delivered equals left, return the left encoder velocity value
+    } else if (side.equals("left")) {
+      return leftEncVel;
+      //if the "side" variable delivered does not equal any of the needed values, 
+    } else {
+      return 1234;
+    }
   }
 }

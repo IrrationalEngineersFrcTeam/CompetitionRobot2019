@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import com.revrobotics.CANEncoder;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
@@ -35,6 +36,11 @@ public class RobotMap {
   public CANSparkMax MotorR1Control;
   public CANSparkMax MotorR2Control;
 
+  public CANEncoder encoderL1;
+  public CANEncoder encoderL2;
+  public CANEncoder encoderR1;
+  public CANEncoder encoderR2;
+
   public RobotMap() {
     
     MotorL1 = 2;
@@ -47,8 +53,10 @@ public class RobotMap {
     MotorR1Control = new CANSparkMax(MotorR1 , MotorType.kBrushless);
     MotorR2Control = new CANSparkMax(MotorR2 , MotorType.kBrushless);
 
-
-
+    encoderL1 = new CANEncoder(MotorL1Control);
+    encoderL2 = new CANEncoder(MotorL2Control);
+    encoderR1 = new CANEncoder(MotorR1Control);
+    encoderR2 = new CANEncoder(MotorR2Control);
 
 
   }
