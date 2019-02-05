@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
 //The imports refer the robot to pre built libraries (mostly wpilib)
 // the allows us to use those libraries so it knows what we mean by"Scheduler" for instance.
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -22,10 +24,15 @@ public class Robot extends TimedRobot {
   public static RobotMap robotmap;
   public static DriveSubsystem drivesub;
   public static HatchMechanismSubsystem hatchmechsub;
+  public static NetworkTable connectionTable;
   
   @Override
   public void robotInit() {
   
+    connectionTable = NetworkTable.getTable("SmartDashboard/robotConnection");
+
+    connectionTable.putBoolean("key", true);
+
   hatchmechsub = new HatchMechanismSubsystem();
   oi = new OI();
   robotmap = new RobotMap();
