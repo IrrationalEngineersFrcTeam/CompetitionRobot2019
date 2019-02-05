@@ -14,6 +14,7 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.DriveSubsystem;
+import frc.robot.subsystems.ElevatorSubsystem;
 import frc.robot.subsystems.HatchMechanismSubsystem;
 
 
@@ -25,6 +26,9 @@ public class Robot extends TimedRobot {
   public static DriveSubsystem drivesub;
   public static HatchMechanismSubsystem hatchmechsub;
   public static NetworkTable connectionTable;
+  public static ElevatorSubsystem elevatesub;
+
+
   
   @Override
   public void robotInit() {
@@ -38,6 +42,9 @@ public class Robot extends TimedRobot {
   robotmap = new RobotMap();
   drivesub = new DriveSubsystem();
 
+  hatchmechsub = new HatchMechanismSubsystem();
+  elevatesub = new ElevatorSubsystem();
+  
 
   }
 

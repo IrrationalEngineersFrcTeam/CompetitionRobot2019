@@ -10,8 +10,11 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.buttons.POVButton;
 import frc.robot.commands.HatchGrabCommand;
 import frc.robot.commands.HatchReleaseCommand;
+import frc.robot.commands.ElevatorUpCommand;
+import frc.robot.commands.ElevatorDownCommand;
 
 public class OI {
 //This creates any joysticks we will use to drive the robot,
@@ -22,6 +25,14 @@ public class OI {
 //Here we have the hatch mechanism button
   public Button HatchMechRelease;
   public Button HatchMechGrab;
+  public Button HatchGrabButton;
+  public Button HatchReleaseButton;
+  public POVButton ElevatorUp315;
+  public POVButton ElevatorUp360;
+  public POVButton ElevatorUp45;
+  public POVButton ElevatorDown135;
+  public POVButton ElevatorDown180;
+  public POVButton ElevatorDown225;
 
 
   public OI() {
@@ -30,14 +41,34 @@ public class OI {
     StickL = new Joystick(0);
     StickR = new Joystick(1);
 
-    HatchMechRelease = new JoystickButton(StickR, 1);
-    HatchMechGrab = new JoystickButton(StickR, 2);
+  //This is a standin number, we will change the button number to the correct button number later   
+    HatchGrabButton = new JoystickButton(StickR, 3);
+    HatchReleaseButton = new JoystickButton(StickR, 4);
+
+  //These buttons are tied to the little joystick called the hat on the big joystick
+  //These three go up
+    ElevatorUp315 = new POVButton(StickL, 315);
+    ElevatorUp360 = new POVButton(StickL, 360);
+    ElevatorUp45 = new POVButton(StickL, 45);
+  //These three go down
+    ElevatorDown135 = new POVButton(StickL, 135);
+    ElevatorDown180 = new POVButton(StickL, 180);
+    ElevatorDown225 = new POVButton(StickL, 225);
 
   //This method binds the button to a command
   //In this case the hatch button
-    //HatchMechButton.whileHeld(new HatchGrabCommand());
-    HatchMechRelease.whenPressed(new HatchReleaseCommand());
-    HatchMechGrab.whenPressed(new HatchGrabCommand());
+    HatchGrabButton.whenPressed(new HatchGrabCommand());
+    HatchReleaseButton.whenPressed(new HatchReleaseCommand());
+
+  //The reason I have three for both up and down is so that it has room for user error
+  //These are up
+    ElevatorUp315.whileHeld(new ElevatorUpCommand());
+    ElevatorUp360.whileHeld(new ElevatorUpCommand());
+    ElevatorUp45.whileHeld(new ElevatorUpCommand());
+  //These are down
+    ElevatorDown135.whileHeld(new ElevatorDownCommand());
+    ElevatorDown180.whileHeld(new ElevatorDownCommand());
+    ElevatorDown225.whileHeld(new ElevatorDownCommand());
 
   }
 
