@@ -22,17 +22,15 @@ public class Robot extends TimedRobot {
   public static RobotMap robotmap;
   public static DriveSubsystem drivesub;
   public static HatchMechanismSubsystem hatchmechsub;
-
-
   
   @Override
   public void robotInit() {
   
+  hatchmechsub = new HatchMechanismSubsystem();
   oi = new OI();
   robotmap = new RobotMap();
   drivesub = new DriveSubsystem();
-  hatchmechsub = new HatchMechanismSubsystem();
-  
+
 
   }
 

@@ -8,28 +8,25 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
+import frc.robot.Robot;
 
 
 /**
  * Add your docs here.
  */
-public class HatchMechanismSubsystem extends Subsystem 
-{
+public class HatchMechanismSubsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+  
+  
 
-  DoubleSolenoid HatchMechPiston = null;
-
-  public void HatchMechExtend()
-  {
-    HatchMechPiston.set(Value.kForward);
+  public void HatchMechExtend(){
+    Robot.robotmap.HatchMechPiston.set(Value.kForward);
   }
 
-  public void HatchMechRetract() 
-  {
-    HatchMechPiston.set(Value.kReverse);  
+  public void HatchMechRetract() {
+    Robot.robotmap.HatchMechPiston.set(Value.kReverse);  
   }
 
   @Override

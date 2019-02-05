@@ -13,8 +13,6 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.HatchGrabCommand;
 import frc.robot.commands.HatchReleaseCommand;
 
-
-
 public class OI {
 //This creates any joysticks we will use to drive the robot,
 //in this case a left joystick and a right joystick.
@@ -22,8 +20,8 @@ public class OI {
   public Joystick StickR;
 
 //Here we have the hatch mechanism button
-  public Button HatchMechButton;
-
+  public Button HatchMechRelease;
+  public Button HatchMechGrab;
 
 
   public OI() {
@@ -32,12 +30,14 @@ public class OI {
     StickL = new Joystick(0);
     StickR = new Joystick(1);
 
-    HatchMechButton = new JoystickButton(StickR, 0);
+    HatchMechRelease = new JoystickButton(StickR, 1);
+    HatchMechGrab = new JoystickButton(StickR, 2);
 
   //This method binds the button to a command
   //In this case the hatch button
-    HatchMechButton.whileHeld(new HatchGrabCommand());
-    HatchMechButton.whenReleased(new HatchReleaseCommand());
+    //HatchMechButton.whileHeld(new HatchGrabCommand());
+    HatchMechRelease.whenPressed(new HatchReleaseCommand());
+    HatchMechGrab.whenPressed(new HatchGrabCommand());
 
   }
 

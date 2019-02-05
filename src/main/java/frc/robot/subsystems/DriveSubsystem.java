@@ -42,8 +42,7 @@ public class DriveSubsystem extends Subsystem {
 
   }
 
-  public double getRightEncoderVel(String side) 
-  {
+  public double getEncoderVel(String side) {
 
     //get the average of the two encoders on each side for a more accurate value
     double rightEncVel = (Robot.robotmap.encoderR1.getVelocity() + Robot.robotmap.encoderR2.getVelocity()) / 2;
