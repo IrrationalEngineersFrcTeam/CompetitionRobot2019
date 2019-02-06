@@ -22,11 +22,12 @@ public class OI {
   public Joystick StickL;
   public Joystick StickR;
 
-//Here we have the hatch mechanism button
+//Here we have the hatch mechanism buttons
   public Button HatchMechRelease;
   public Button HatchMechGrab;
   public Button HatchGrabButton;
   public Button HatchReleaseButton;
+
   public POVButton ElevatorUp315;
   public POVButton ElevatorUp360;
   public POVButton ElevatorUp45;
@@ -41,7 +42,8 @@ public class OI {
     StickL = new Joystick(0);
     StickR = new Joystick(1);
 
-  //This is a standin number, we will change the button number to the correct button number later   
+  //This is where we tie the code buttons to the buttons on the joysticks
+  //In this case the hatch button
     HatchGrabButton = new JoystickButton(StickR, 3);
     HatchReleaseButton = new JoystickButton(StickR, 4);
 

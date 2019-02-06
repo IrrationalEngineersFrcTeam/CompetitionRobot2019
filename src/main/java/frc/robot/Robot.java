@@ -38,13 +38,12 @@ public class Robot extends TimedRobot {
     connectionTable.putBoolean("key", true);
 
   hatchmechsub = new HatchMechanismSubsystem();
+  elevatesub = new ElevatorSubsystem();
   oi = new OI();
   robotmap = new RobotMap();
   drivesub = new DriveSubsystem();
 
-  hatchmechsub = new HatchMechanismSubsystem();
-  elevatesub = new ElevatorSubsystem();
-  
+
 
   }
 

@@ -44,6 +44,7 @@ public class RobotMap {
   public CANEncoder encoderL2;
   public CANEncoder encoderR1;
   public CANEncoder encoderR2;
+
   public DoubleSolenoid HatchMechPiston;
 
   public RobotMap() {
@@ -64,6 +65,7 @@ public class RobotMap {
     encoderL2 = new CANEncoder(MotorL2Control);
     encoderR1 = new CANEncoder(MotorR1Control);
     encoderR2 = new CANEncoder(MotorR2Control);
+    
     HatchMechPiston = new DoubleSolenoid(0, 1);
 
     HatchMechPiston.set(DoubleSolenoid.Value.kOff);
