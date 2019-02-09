@@ -13,8 +13,8 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.POVButton;
 import frc.robot.commands.HatchGrabCommand;
 import frc.robot.commands.HatchReleaseCommand;
-import frc.robot.commands.ElevatorUpCommand;
-import frc.robot.commands.ElevatorDownCommand;
+import frc.robot.commands.ElevatorUpManualCommand;
+import frc.robot.commands.ElevatorDownManualCommand;
 
 public class OI {
 //This creates any joysticks we will use to drive the robot,
@@ -64,13 +64,13 @@ public class OI {
 
   //The reason I have three for both up and down is so that it has room for user error
   //These are up
-    ElevatorUp315.whileHeld(new ElevatorUpCommand());
-    ElevatorUp360.whileHeld(new ElevatorUpCommand());
-    ElevatorUp45.whileHeld(new ElevatorUpCommand());
+    ElevatorUp315.whileHeld(new ElevatorUpManualCommand());
+    ElevatorUp360.whileHeld(new ElevatorUpManualCommand());
+    ElevatorUp45.whileHeld(new ElevatorUpManualCommand());
   //These are down
-    ElevatorDown135.whileHeld(new ElevatorDownCommand());
-    ElevatorDown180.whileHeld(new ElevatorDownCommand());
-    ElevatorDown225.whileHeld(new ElevatorDownCommand());
+    ElevatorDown135.whileHeld(new ElevatorDownManualCommand());
+    ElevatorDown180.whileHeld(new ElevatorDownManualCommand());
+    ElevatorDown225.whileHeld(new ElevatorDownManualCommand());
 
   }
 
