@@ -13,10 +13,10 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 // the allows us to use those libraries so it knows what we mean by"Scheduler" for instance.
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ElevatorSubsystem;
 import frc.robot.subsystems.HatchMechanismSubsystem;
-
 
 
 public class Robot extends TimedRobot {
@@ -27,6 +27,7 @@ public class Robot extends TimedRobot {
   public static HatchMechanismSubsystem hatchmechsub;
   public static NetworkTable connectionTable;
   public static ElevatorSubsystem elevatesub;
+  public static ArmSubsystem armsub;
 
 
   
@@ -39,6 +40,7 @@ public class Robot extends TimedRobot {
 
   hatchmechsub = new HatchMechanismSubsystem();
   elevatesub = new ElevatorSubsystem();
+  armsub = new ArmSubsystem();
   oi = new OI();
   robotmap = new RobotMap();
   drivesub = new DriveSubsystem();

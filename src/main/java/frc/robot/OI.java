@@ -23,10 +23,14 @@ public class OI {
   public Joystick StickR;
 
 //Here we have the hatch mechanism buttons
-  public Button HatchMechRelease;
-  public Button HatchMechGrab;
   public Button HatchGrabButton;
   public Button HatchReleaseButton;
+
+/*
+//These Arm and slider buttons are for testing and will probably be removed out
+*/
+  public Button ArmExtendButton;
+  public Button ArmRetractButton;
 
   public POVButton ElevatorUp315;
   public POVButton ElevatorUp360;
@@ -46,6 +50,13 @@ public class OI {
   //In this case the hatch button
     HatchGrabButton = new JoystickButton(StickR, 3);
     HatchReleaseButton = new JoystickButton(StickR, 4);
+
+    /*
+    //These buttons are for testing purposes, they will be phased out in the future
+    */
+    ArmExtendButton = new JoystickButton(StickL, 3);
+    ArmRetractButton = new JoystickButton(StickL, 4);
+
 
   //These buttons are tied to the little joystick called the hat on the big joystick
   //These three go up
