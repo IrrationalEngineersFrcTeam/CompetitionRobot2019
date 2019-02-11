@@ -31,13 +31,13 @@ public class RobotMap {
   public static int MotorL2;
   public static int MotorR1;
   public static int MotorR2;
-  public static int MotorE1;
+  public static int MotorElev;
 
   public CANSparkMax MotorL1Control;
   public CANSparkMax MotorL2Control;
   public CANSparkMax MotorR1Control;
   public CANSparkMax MotorR2Control;
-  public CANSparkMax MotorE1Control;
+  public CANSparkMax MotorElevControl;
 
 
   public CANEncoder encoderL1;
@@ -53,13 +53,13 @@ public class RobotMap {
     MotorL2 = 3;
     MotorR1 = 0;
     MotorR2 = 1;
-    MotorE1 = 4;
+    MotorElev = 4;
 
     MotorL1Control = new CANSparkMax(MotorL1 , MotorType.kBrushless);
     MotorL2Control = new CANSparkMax(MotorL2 , MotorType.kBrushless);
     MotorR1Control = new CANSparkMax(MotorR1 , MotorType.kBrushless);
     MotorR2Control = new CANSparkMax(MotorR2 , MotorType.kBrushless);
-    MotorE1Control = new CANSparkMax(MotorE1 , MotorType.kBrushed);
+    MotorElevControl = new CANSparkMax(MotorElev , MotorType.kBrushed);
 
     encoderL1 = new CANEncoder(MotorL1Control);
     encoderL2 = new CANEncoder(MotorL2Control);

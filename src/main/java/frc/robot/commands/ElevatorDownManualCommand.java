@@ -13,7 +13,7 @@ import frc.robot.Robot;
 public class ElevatorDownManualCommand extends Command {
   public ElevatorDownManualCommand() {
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.elevatesub);
   }
 
   // Called just before this Command runs the first time

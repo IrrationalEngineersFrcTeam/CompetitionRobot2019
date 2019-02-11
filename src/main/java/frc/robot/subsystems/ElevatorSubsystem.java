@@ -23,10 +23,10 @@ public class ElevatorSubsystem extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 
-  public void ElevatorSpeed(double ESpeed) 
+  public void ElevatorSpeed(double ElevSpeed) 
   {
       
-    Robot.robotmap.MotorE1Control.set(ESpeed);
+    Robot.robotmap.MotorElevControl.set(ElevSpeed);
 
   }
 
