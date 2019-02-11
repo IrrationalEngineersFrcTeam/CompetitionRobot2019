@@ -10,10 +10,10 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class ElevatorUpManualCommand extends Command {
-  public ElevatorUpManualCommand() {
+public class SlideElevatorForwardCommand extends Command {
+  public SlideElevatorForwardCommand() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.elevatesub);
+    requires(Robot.elevateslidesub);
   }
 
   // Called just before this Command runs the first time
@@ -26,7 +26,7 @@ public class ElevatorUpManualCommand extends Command {
   protected void execute() 
   {
 
-    Robot.elevatesub.ElevatorSpeed(0.3);
+    Robot.elevateslidesub.ElevSlideForward();
 
   }
 
@@ -38,11 +38,7 @@ public class ElevatorUpManualCommand extends Command {
 
   // Called once after isFinished returns true
   @Override
-  protected void end() 
-  {
-
-    Robot.elevatesub.ElevatorSpeed(0.0);
-
+  protected void end() {
   }
 
   // Called when another command which requires one or more of the same
