@@ -13,8 +13,6 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.POVButton;
 import frc.robot.commands.HatchGrabCommand;
 import frc.robot.commands.HatchReleaseCommand;
-import frc.robot.commands.ElevatorUpManualCommand;
-import frc.robot.commands.ElevatorDownManualCommand;
 import frc.robot.commands.ArmExtendCommand;
 import frc.robot.commands.ArmRetractCommand;
 import frc.robot.commands.ElevatorUpCommand;
