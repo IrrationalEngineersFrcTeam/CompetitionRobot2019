@@ -70,7 +70,6 @@ public class RobotMap {
     
     HatchMechPiston = new DoubleSolenoid(0, 1);
     ArmPiston = new DoubleSolenoid(2, 3);
-
     ElevatorSlider = new DoubleSolenoid(4, 5);
     
     HatchMechPiston.set(DoubleSolenoid.Value.kOff);
