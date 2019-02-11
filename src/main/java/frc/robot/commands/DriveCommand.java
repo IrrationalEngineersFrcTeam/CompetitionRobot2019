@@ -29,7 +29,7 @@ public class DriveCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    //This creates two variables that are equal to the anle of joysticks
+    //This creates two variables that are equal to the angle of joysticks
     //These will be usefull to the drive subsystem 
     double SpeedL = Robot.oi.StickL.getY();
     double SpeedR = Robot.oi.StickR.getY();

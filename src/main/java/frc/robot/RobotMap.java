@@ -31,7 +31,7 @@ public class RobotMap {
   public static int MotorL2;
   public static int MotorR1;
   public static int MotorR2;
-  public static int MotorElev;
+  public static int MotorE1;
 
   public CANSparkMax MotorL1Control;
   public CANSparkMax MotorL2Control;
