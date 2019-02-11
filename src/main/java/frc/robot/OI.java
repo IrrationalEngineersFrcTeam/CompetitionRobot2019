@@ -17,6 +17,11 @@ import frc.robot.commands.ElevatorUpManualCommand;
 import frc.robot.commands.ElevatorDownManualCommand;
 import frc.robot.commands.ArmExtendCommand;
 import frc.robot.commands.ArmRetractCommand;
+import frc.robot.commands.ElevatorUpCommand;
+import frc.robot.commands.ElevatorDownCommand;
+import frc.robot.commands.SlideElevatorForwardCommand;
+import frc.robot.commands.SlideElevatorBackCommand;
+
 
 public class OI {
 //This creates any joysticks we will use to drive the robot,
@@ -34,6 +39,11 @@ public class OI {
   public Button ArmExtendButton;
   public Button ArmRetractButton;
 
+//These buttons are to slide the elevator forward and back
+public Button SliderForward;
+public Button SliderBack;
+
+//These are the manual elevator control buttons
   public POVButton ElevatorUp315;
   public POVButton ElevatorUp360;
   public POVButton ElevatorUp45;
@@ -59,6 +69,9 @@ public class OI {
     ArmExtendButton = new JoystickButton(StickL, 3);
     ArmRetractButton = new JoystickButton(StickL, 4);
 
+  //These are for the slider piston for the elevator
+  SliderForward = new JoystickButton(StickL, 9);
+  SliderBack = new JoystickButton(StickL, 10);
 
   //These buttons are tied to the little joystick called the hat on the big joystick
   //These three go up
@@ -80,15 +93,19 @@ public class OI {
     ArmExtendButton.whenPressed(new ArmExtendCommand());
     ArmRetractButton.whenPressed(new ArmRetractCommand());
 
+  //The slider command
+    SliderForward.whenPressed(new SlideElevatorForwardCommand());
+    SliderBack.whenPressed(new SlideElevatorBackCommand());
+
   //The reason I have three for both up and down is so that it has room for user error
   //These are up
-    ElevatorUp315.whileHeld(new ElevatorUpManualCommand());
-    ElevatorUp360.whileHeld(new ElevatorUpManualCommand());
-    ElevatorUp45.whileHeld(new ElevatorUpManualCommand());
+    ElevatorUp315.whileHeld(new ElevatorUpCommand());
+    ElevatorUp360.whileHeld(new ElevatorUpCommand());
+    ElevatorUp45.whileHeld(new ElevatorUpCommand());
   //These are down
-    ElevatorDown135.whileHeld(new ElevatorDownManualCommand());
-    ElevatorDown180.whileHeld(new ElevatorDownManualCommand());
-    ElevatorDown225.whileHeld(new ElevatorDownManualCommand());
+    ElevatorDown135.whileHeld(new ElevatorDownCommand());
+    ElevatorDown180.whileHeld(new ElevatorDownCommand());
+    ElevatorDown225.whileHeld(new ElevatorDownCommand());
 
   }
 

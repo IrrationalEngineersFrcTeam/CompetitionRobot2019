@@ -47,6 +47,7 @@ public class RobotMap {
 
   public DoubleSolenoid HatchMechPiston;
   public DoubleSolenoid ArmPiston;
+  public DoubleSolenoid ElevatorSlider;
 
   public RobotMap() {
     
@@ -70,6 +71,8 @@ public class RobotMap {
     HatchMechPiston = new DoubleSolenoid(0, 1);
     ArmPiston = new DoubleSolenoid(2, 3);
 
+    ElevatorSlider = new DoubleSolenoid(4, 5);
+    
     HatchMechPiston.set(DoubleSolenoid.Value.kOff);
     HatchMechPiston.set(DoubleSolenoid.Value.kForward);
     HatchMechPiston.set(DoubleSolenoid.Value.kReverse);
@@ -77,6 +80,9 @@ public class RobotMap {
     ArmPiston.set(DoubleSolenoid.Value.kForward);
     ArmPiston.set(DoubleSolenoid.Value.kReverse);
 
+    ElevatorSlider.set(DoubleSolenoid.Value.kOff);
+    ElevatorSlider.set(DoubleSolenoid.Value.kForward);
+    ElevatorSlider.set(DoubleSolenoid.Value.kReverse);
 
 
 
