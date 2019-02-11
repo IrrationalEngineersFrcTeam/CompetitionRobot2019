@@ -15,6 +15,8 @@ import frc.robot.commands.HatchGrabCommand;
 import frc.robot.commands.HatchReleaseCommand;
 import frc.robot.commands.ElevatorUpManualCommand;
 import frc.robot.commands.ElevatorDownManualCommand;
+import frc.robot.commands.ArmExtendCommand;
+import frc.robot.commands.ArmRetractCommand;
 
 public class OI {
 //This creates any joysticks we will use to drive the robot,
@@ -72,6 +74,11 @@ public class OI {
   //In this case the hatch button
     HatchGrabButton.whenPressed(new HatchGrabCommand());
     HatchReleaseButton.whenPressed(new HatchReleaseCommand());
+    /*
+    //These are temperary
+    */
+    ArmExtendButton.whenPressed(new ArmExtendCommand());
+    ArmRetractButton.whenPressed(new ArmRetractCommand());
 
   //The reason I have three for both up and down is so that it has room for user error
   //These are up
