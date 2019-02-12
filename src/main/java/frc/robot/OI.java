@@ -13,8 +13,8 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.POVButton;
 import frc.robot.commands.HatchGrabCommand;
 import frc.robot.commands.HatchReleaseCommand;
-import frc.robot.commands.ArmExtendCommand;
-import frc.robot.commands.ArmRetractCommand;
+import frc.robot.sequentialCommands.ArmExtendCommand;
+import frc.robot.sequentialCommands.ArmRetractCommand;
 import frc.robot.commands.ElevatorUpCommand;
 import frc.robot.commands.ElevatorDownCommand;
 import frc.robot.commands.SlideElevatorForwardCommand;
@@ -31,15 +31,13 @@ public class OI {
   public Button HatchGrabButton;
   public Button HatchReleaseButton;
 
-/*
-//These Arm and slider buttons are for testing and will probably be removed out
-*/
+//These Arm and slider buttons are for testing and will probably be removed
   public Button ArmExtendButton;
   public Button ArmRetractButton;
 
 //These buttons are to slide the elevator forward and back
-public Button SliderForward;
-public Button SliderBack;
+  public Button SliderForward;
+  public Button SliderBack;
 
 //These are the manual elevator control buttons
   public POVButton ElevatorUp315;
@@ -51,25 +49,24 @@ public Button SliderBack;
 
 
   public OI() {
-    //This tells the robot what ports these joysticks will be connected to, 
+  //This tells the robot what ports these joysticks will be connected to, 
 
     StickL = new Joystick(0);
     StickR = new Joystick(1);
 
   //This is where we tie the code buttons to the buttons on the joysticks
   //In this case the hatch button
-    HatchGrabButton = new JoystickButton(StickR, 3);
-    HatchReleaseButton = new JoystickButton(StickR, 4);
+    HatchGrabButton = new JoystickButton(StickR, 2);
+    HatchReleaseButton = new JoystickButton(StickR, 3);
 
-    /*
-    //These buttons are for testing purposes, they will be phased out in the future
-    */
-    ArmExtendButton = new JoystickButton(StickL, 3);
-    ArmRetractButton = new JoystickButton(StickL, 4);
+    
+  //These buttons are for testing purposes, they will be phased out in the future
+    ArmExtendButton = new JoystickButton(StickL, 2);
+    ArmRetractButton = new JoystickButton(StickL, 3);
 
   //These are for the slider piston for the elevator
-  SliderForward = new JoystickButton(StickL, 9);
-  SliderBack = new JoystickButton(StickL, 10);
+    SliderForward = new JoystickButton(StickL, 10);
+    SliderBack = new JoystickButton(StickL, 14);
 
   //These buttons are tied to the little joystick called the hat on the big joystick
   //These three go up

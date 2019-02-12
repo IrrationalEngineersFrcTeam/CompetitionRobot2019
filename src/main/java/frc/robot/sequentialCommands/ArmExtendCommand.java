@@ -5,13 +5,13 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.sequentialCommands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class ArmRetractCommand extends Command {
-  public ArmRetractCommand() {
+public class ArmExtendCommand extends Command {
+  public ArmExtendCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(Robot.armsub);
@@ -20,7 +20,7 @@ public class ArmRetractCommand extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.armsub.ArmRetract();
+    Robot.armsub.ArmExtend();
   }
 
   // Called repeatedly when this Command is scheduled to run

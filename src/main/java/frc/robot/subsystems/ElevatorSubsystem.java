@@ -26,7 +26,7 @@ public class ElevatorSubsystem extends Subsystem {
   public void ElevatorSpeed(double ElevSpeed) 
   {
       
-    Robot.robotmap.MotorElevControl.set(ElevSpeed);
+    Robot.robotmap.MotorElevControl.setSpeed(ElevSpeed);
 
   }
 
