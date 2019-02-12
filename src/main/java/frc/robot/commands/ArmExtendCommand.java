@@ -5,19 +5,22 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.sequentialCommands;
+package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
-public class PlaceHatchLevel1 extends Command {
-  public PlaceHatchLevel1() {
+public class ArmExtendCommand extends Command {
+  public ArmExtendCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
+    requires(Robot.armsub);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    Robot.armsub.ArmExtend();
   }
 
   // Called repeatedly when this Command is scheduled to run
