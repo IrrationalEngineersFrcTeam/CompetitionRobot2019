@@ -13,12 +13,15 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.POVButton;
 import frc.robot.commands.HatchGrabCommand;
 import frc.robot.commands.HatchReleaseCommand;
-import frc.robot.sequentialCommands.ArmExtendCommand;
-import frc.robot.sequentialCommands.ArmRetractCommand;
+import frc.robot.commands.ArmExtendCommand;
+import frc.robot.commands.ArmRetractCommand;
 import frc.robot.commands.ElevatorUpCommand;
 import frc.robot.commands.ElevatorDownCommand;
 import frc.robot.commands.SlideElevatorForwardCommand;
 import frc.robot.commands.SlideElevatorBackCommand;
+import frc.robot.commands.PlaceHatchLevel_1;
+import frc.robot.commands.PlaceHatchLevel_2;
+import frc.robot.commands.PlaceHatchLevel_3;
 
 
 public class OI {
@@ -38,6 +41,11 @@ public class OI {
 //These buttons are to slide the elevator forward and back
   public Button SliderForward;
   public Button SliderBack;
+
+//These Buttons are for the command groups for lifting the hatch to specific levels
+public Button PlaceHatchLevel_1_Button;
+public Button PlaceHatchLevel_2_Button;
+public Button PlaceHatchLevel_3_Button;
 
 //These are the manual elevator control buttons
   public POVButton ElevatorUp315;
@@ -68,6 +76,14 @@ public class OI {
     SliderForward = new JoystickButton(StickL, 10);
     SliderBack = new JoystickButton(StickL, 14);
 
+
+    //These buttons are the buttons for the command groups, eventually we will only have these buttons
+    //instead of seperate buttons for the ArmExtend/Retract and the elevator buttons
+    //We will change the button ports later
+    PlaceHatchLevel_1_Button = new JoystickButton(StickR, 11);
+    PlaceHatchLevel_2_Button = new JoystickButton(StickR, 12);
+    PlaceHatchLevel_3_Button = new JoystickButton(StickR, 13);
+
   //These buttons are tied to the little joystick called the hat on the big joystick
   //These three go up
     ElevatorUp315 = new POVButton(StickL, 315);
@@ -91,6 +107,11 @@ public class OI {
   //The slider command
     SliderForward.whenPressed(new SlideElevatorForwardCommand());
     SliderBack.whenPressed(new SlideElevatorBackCommand());
+
+  //The Place Hatch commands
+    PlaceHatchLevel_1_Button.whenPressed(new PlaceHatchLevel_1());
+    PlaceHatchLevel_2_Button.whenPressed(new PlaceHatchLevel_2());
+    PlaceHatchLevel_3_Button.whenPressed(new PlaceHatchLevel_3());
 
   //The reason I have three for both up and down is so that it has room for user error
   //These are up
