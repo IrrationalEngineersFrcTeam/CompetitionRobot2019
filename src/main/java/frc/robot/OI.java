@@ -30,7 +30,6 @@ public class OI {
   public Joystick StickR;
 
 //Here we have the hatch mechanism buttons
-  //public Button HatchGrabButton;
   public Button HatchHoldOpenButton;
 
 //These Arm and slider buttons are for testing and will probably be removed
@@ -63,7 +62,6 @@ public Button PlaceHatchLevel_3_Button;
 
   //This is where we tie the code buttons to the buttons on the joysticks
   //In this case the hatch button
-    // HatchGrabButton = new JoystickButton(StickR, 2);
     HatchHoldOpenButton = new JoystickButton(StickR, 0);
 
     

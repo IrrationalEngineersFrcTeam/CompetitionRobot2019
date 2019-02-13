@@ -21,7 +21,6 @@ public class ElevatorDownCommand extends Command {
 
   DigitalInput LimitLow = new DigitalInput(1);
   Counter LimitCounter = new Counter(LimitLow);
-  int LimitSwitchLow = LimitCounter.get();
 
   // Called just before this Command runs the first time
   @Override
@@ -33,7 +32,7 @@ public class ElevatorDownCommand extends Command {
   protected void execute() 
   {
 
-    while(!Robot.elevatesub.LimitSwitchTester(this.LimitSwitchLow))
+    while(!Robot.elevatesub.LimitSwitchTester(this.LimitCounter.get()))
     {
       Robot.elevatesub.ElevatorSpeed(-0.3);
     }

@@ -20,7 +20,6 @@ public class ElevatorUpCommand extends Command {
 
   DigitalInput LimitHigh = new DigitalInput(0);
   Counter LimitCounter = new Counter(LimitHigh);
-  int LimitSwitchHigh = LimitCounter.get();
 
   // Called just before this Command runs the first time
   @Override
@@ -32,7 +31,7 @@ public class ElevatorUpCommand extends Command {
   protected void execute() 
   {
 
-    while(!Robot.elevatesub.LimitSwitchTester(this.LimitSwitchHigh))
+    while(!Robot.elevatesub.LimitSwitchTester(this.LimitCounter.get()))
     {
       Robot.elevatesub.ElevatorSpeed(0.3);
     }
@@ -49,6 +48,11 @@ public class ElevatorUpCommand extends Command {
   @Override
   protected void end() 
   {
+    // if(Robot.elevatesub.LimitSwitchTester(this.LimitCounter.get()) == true)
+    // {
+    // System.out.println("The limit switch has been triggered!");
+    // }
+    // else{System.out.println("Limit not reached!!");}
 
     Robot.elevatesub.ElevatorSpeed(0.0);
 
