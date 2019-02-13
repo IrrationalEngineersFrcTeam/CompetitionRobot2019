@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.POVButton;
-import frc.robot.commands.HatchGrabCommand;
 import frc.robot.commands.HatchHoldOpenCommand;
 import frc.robot.commands.ArmExtendCommand;
 import frc.robot.commands.ArmRetractCommand;
