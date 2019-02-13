@@ -19,9 +19,9 @@ import frc.robot.commands.ElevatorUpCommand;
 import frc.robot.commands.ElevatorDownCommand;
 import frc.robot.commands.SlideElevatorForwardCommand;
 import frc.robot.commands.SlideElevatorBackCommand;
-import frc.robot.commands.PlaceHatchLevel_1;
-import frc.robot.commands.PlaceHatchLevel_2;
-import frc.robot.commands.PlaceHatchLevel_3;
+import frc.robot.autoCommands.PlaceHatchLevel_1;
+import frc.robot.autoCommands.PlaceHatchLevel_2;
+import frc.robot.autoCommands.PlaceHatchLevel_3;
 
 
 public class OI {

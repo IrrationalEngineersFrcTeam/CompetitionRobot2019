@@ -10,6 +10,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.Robot;
 
+
 /**
  * Add your docs here.
  */
@@ -29,5 +30,11 @@ public class ElevatorSubsystem extends Subsystem {
     Robot.robotmap.MotorElevControl.setSpeed(ElevSpeed);
 
   }
+
+  public boolean LimitSwitchTester(int LimitLowOnOff)
+  {
+    return LimitLowOnOff > 0;
+  }
+
 
 }

@@ -9,12 +9,19 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import edu.wpi.first.wpilibj.Counter;
+import edu.wpi.first.wpilibj.DigitalInput;
+
 
 public class ElevatorDownCommand extends Command {
   public ElevatorDownCommand() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.elevatesub);
   }
+
+  DigitalInput LimitLow = new DigitalInput(1);
+  Counter LimitCounter = new Counter(LimitLow);
+  int LimitSwitchLow = LimitCounter.get();
 
   // Called just before this Command runs the first time
   @Override
@@ -26,7 +33,10 @@ public class ElevatorDownCommand extends Command {
   protected void execute() 
   {
 
-    Robot.elevatesub.ElevatorSpeed(-0.3);
+    while(!Robot.elevatesub.LimitSwitchTester(this.LimitSwitchLow))
+    {
+      Robot.elevatesub.ElevatorSpeed(-0.3);
+    }
 
   }
 

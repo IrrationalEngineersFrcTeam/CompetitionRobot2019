@@ -5,9 +5,11 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.autoCommands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import frc.robot.commands.ElevatorDownCommand;
+import frc.robot.commands.ArmRetractCommand;
 
 public class PlaceHatchLevel_1 extends CommandGroup {
   /**
