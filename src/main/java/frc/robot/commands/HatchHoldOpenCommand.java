@@ -10,9 +10,9 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class HatchReleaseCommand extends Command 
+public class HatchHoldOpenCommand extends Command 
 {
-  public HatchReleaseCommand() 
+  public HatchHoldOpenCommand() 
   {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -39,7 +39,11 @@ public class HatchReleaseCommand extends Command
 
   // Called once after isFinished returns true
   @Override
-  protected void end() {
+  protected void end() 
+  {
+
+    Robot.hatchmechsub.HatchMechExtend();
+
   }
 
   // Called when another command which requires one or more of the same

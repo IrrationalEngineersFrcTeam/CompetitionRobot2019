@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.buttons.POVButton;
 import frc.robot.commands.HatchGrabCommand;
-import frc.robot.commands.HatchReleaseCommand;
+import frc.robot.commands.HatchHoldOpenCommand;
 import frc.robot.commands.ArmExtendCommand;
 import frc.robot.commands.ArmRetractCommand;
 import frc.robot.commands.ElevatorUpCommand;
@@ -31,8 +31,8 @@ public class OI {
   public Joystick StickR;
 
 //Here we have the hatch mechanism buttons
-  public Button HatchGrabButton;
-  public Button HatchReleaseButton;
+  //public Button HatchGrabButton;
+  public Button HatchHoldOpenButton;
 
 //These Arm and slider buttons are for testing and will probably be removed
   public Button ArmExtendButton;
@@ -64,8 +64,8 @@ public Button PlaceHatchLevel_3_Button;
 
   //This is where we tie the code buttons to the buttons on the joysticks
   //In this case the hatch button
-    HatchGrabButton = new JoystickButton(StickR, 2);
-    HatchReleaseButton = new JoystickButton(StickR, 3);
+    // HatchGrabButton = new JoystickButton(StickR, 2);
+    HatchHoldOpenButton = new JoystickButton(StickR, 0);
 
     
   //These buttons are for testing purposes, they will be phased out in the future
@@ -80,9 +80,9 @@ public Button PlaceHatchLevel_3_Button;
     //These buttons are the buttons for the command groups, eventually we will only have these buttons
     //instead of seperate buttons for the ArmExtend/Retract and the elevator buttons
     //We will change the button ports later
-    PlaceHatchLevel_1_Button = new JoystickButton(StickR, 11);
-    PlaceHatchLevel_2_Button = new JoystickButton(StickR, 12);
-    PlaceHatchLevel_3_Button = new JoystickButton(StickR, 13);
+    PlaceHatchLevel_1_Button = new JoystickButton(StickR, 2);
+    PlaceHatchLevel_2_Button = new JoystickButton(StickR, 1);
+    PlaceHatchLevel_3_Button = new JoystickButton(StickR, 3);
 
   //These buttons are tied to the little joystick called the hat on the big joystick
   //These three go up
@@ -96,8 +96,9 @@ public Button PlaceHatchLevel_3_Button;
 
   //This method binds the button to a command
   //In this case the hatch button
-    HatchGrabButton.whenPressed(new HatchGrabCommand());
-    HatchReleaseButton.whenPressed(new HatchReleaseCommand());
+  //  HatchGrabButton.whenPressed(new HatchGrabCommand());
+  //Iedited it so that HatchGrab is now useless
+    HatchHoldOpenButton.whileHeld(new HatchHoldOpenCommand());
     /*
     //These are temperary
     */
