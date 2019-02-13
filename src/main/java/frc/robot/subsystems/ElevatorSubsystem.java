@@ -27,7 +27,8 @@ public class ElevatorSubsystem extends Subsystem {
   public void ElevatorSpeed(double ElevSpeed) 
   {
       
-    Robot.robotmap.MotorElevControl.setSpeed(ElevSpeed);
+  //If you are using a spark, not a spark max, it would be: .setSpeed(ElevSpeed) , instead of just .set(ElevSpeed)
+    Robot.robotmap.MotorElevControl.set(ElevSpeed);
 
   }
 
