@@ -33,16 +33,15 @@ public class ElevatorSubsystem extends Subsystem {
 
   public void ElevatorSpeed(double ElevSpeed) 
   {
-      
-    if(!LimitSwitchTester(LimitCounterHigh.get()) == true || !LimitSwitchTester(LimitCounterLow.get()) == true)
-    {
-      //If you are using a spark, not a spark max, it would be: .setSpeed(ElevSpeed) , instead of just .set(ElevSpeed)
-      Robot.robotmap.MotorElevControl.set(ElevSpeed);
-    }
+
+    //If you are using a spark, not a spark max, it would be: .setSpeed(ElevSpeed) , instead of just .set(ElevSpeed)
+    Robot.robotmap.MotorElevControl.set(ElevSpeed);
+
+/*  if(!LimitSwitchTester(LimitCounterHigh.get()) == true || !LimitSwitchTester(LimitCounterLow.get()) == true)
+    {Robot.robotmap.MotorElevControl.set(ElevSpeed);}
     else
-    {
-      Robot.robotmap.MotorElevControl.set(0.0);
-    }
+    {Robot.robotmap.MotorElevControl.set(0.0);} 
+*/
 
   }
 
