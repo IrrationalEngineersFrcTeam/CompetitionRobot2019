@@ -48,11 +48,11 @@ public class ElevatorUpCommand extends Command {
   @Override
   protected void end() 
   {
-    // if(Robot.elevatesub.LimitSwitchTester(this.LimitCounter.get()) == true)
-    // {
-    // System.out.println("The limit switch has been triggered!");
-    // }
-    // else{System.out.println("Limit not reached!!");}
+    //  if(Robot.elevatesub.LimitSwitchTester(this.LimitCounter.get()) == true)
+    //  {
+    //  System.out.println("The limit switch has been triggered!");
+    //  }
+    //  else{System.out.println("Limit not reached!!");}
 
     Robot.elevatesub.ElevatorSpeed(0.0);
 
