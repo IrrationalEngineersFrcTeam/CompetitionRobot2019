@@ -7,8 +7,9 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 //The imports refer the robot to pre built libraries (mostly wpilib)
 // the allows us to use those libraries so it knows what we mean by"Scheduler" for instance.
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -26,20 +27,21 @@ public class Robot extends TimedRobot {
   public static RobotMap robotmap;
   public static DriveSubsystem drivesub;
   public static HatchMechanismSubsystem hatchmechsub;
-  public static NetworkTable connectionTable;
   public static ElevatorSubsystem elevatesub;
   public static ArmSubsystem armsub;
   public static ElevatorSliderSubsystem elevateslidesub;
-
-
+  public static NetworkTableInstance inst;
+  public static NetworkTable smartDashboardTable;
+  public static NetworkTable camera1Table;
+  public static NetworkTableEntry connected;
+  public static NetworkTableEntry distance;
+  public static NetworkTableEntry piTest;
+  public static NetworkTableEntry encoderL;
+  public static NetworkTableEntry encoderR;
   
   @Override
   public void robotInit() {
   
-    connectionTable = NetworkTable.getTable("SmartDashboard/robotConnection");
-
-    connectionTable.putBoolean("key", true);
-
   hatchmechsub = new HatchMechanismSubsystem();
   elevatesub = new ElevatorSubsystem();
   armsub = new ArmSubsystem();
@@ -47,14 +49,28 @@ public class Robot extends TimedRobot {
   oi = new OI();
   robotmap = new RobotMap();
   drivesub = new DriveSubsystem();
-
-
+  inst = NetworkTableInstance.getDefault();
+  smartDashboardTable = inst.getTable("SmartDashboard");
+  camera1Table = inst.getTable("RaspberryPi");
+  connected = smartDashboardTable.getEntry("robotConnection");
+  distance = camera1Table.getEntry("distance");
+  encoderL = smartDashboardTable.getEntry("encoderL");
+  encoderR = smartDashboardTable.getEntry("encoderR");
+  piTest = smartDashboardTable.getEntry("timeRunning");
 
   }
 
   
   @Override
   public void robotPeriodic() {
+
+    connected.setBoolean(true);
+    System.out.println(distance.getDouble(0));
+    
+    //piTest.setDouble(distance.getDouble(0));
+    //encoderL.setDouble(leftspeed);
+    //encoderR.setDouble(rightspeed);
+
   }
 
  
