@@ -50,5 +50,16 @@ public class ElevatorSubsystem extends Subsystem {
     return LimitLowOnOff > 0;
   }
 
+  public void ElevatorUp() {
+    Robot.robotmap.MotorElevControl.set(0.3);
+  }
+
+  public void ElevatorDown() {
+    Robot.robotmap.MotorElevControl.set(-0.3);
+  }
+
+  public void ElevatorStop() {
+    Robot.robotmap.MotorElevControl.set(0);
+  }
 
 }

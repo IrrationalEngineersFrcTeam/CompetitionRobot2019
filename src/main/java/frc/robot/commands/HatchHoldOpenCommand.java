@@ -23,7 +23,7 @@ public class HatchHoldOpenCommand extends Command
   @Override
   protected void initialize() 
   {
-    Robot.hatchmechsub.HatchMechRetract();
+    Robot.hatchmechsub.HatchMechExtend();
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -42,7 +42,7 @@ public class HatchHoldOpenCommand extends Command
   protected void end() 
   {
 
-    Robot.hatchmechsub.HatchMechExtend();
+    Robot.hatchmechsub.HatchMechRetract();
 
   }
 

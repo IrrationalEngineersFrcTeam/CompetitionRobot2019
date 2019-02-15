@@ -18,8 +18,8 @@ public class ElevatorUpCommand extends Command {
     requires(Robot.elevatesub);
   }
 
-  DigitalInput LimitHigh = new DigitalInput(0);
-  Counter LimitCounter = new Counter(LimitHigh);
+  //DigitalInput LimitHigh = new DigitalInput(0);
+  //Counter LimitCounter = new Counter(LimitHigh);
 
   // Called just before this Command runs the first time
   @Override
@@ -30,12 +30,12 @@ public class ElevatorUpCommand extends Command {
   @Override
   protected void execute() 
   {
-
-    while(!Robot.elevatesub.LimitSwitchTester(this.LimitCounter.get()))
+    Robot.elevatesub.ElevatorUp();
+    /*while(!Robot.elevatesub.LimitSwitchTester(this.LimitCounter.get()))
     {
       Robot.elevatesub.ElevatorSpeed(0.3);
     }
-
+    */
   }
 
   // Make this return true when this Command no longer needs to run execute()
