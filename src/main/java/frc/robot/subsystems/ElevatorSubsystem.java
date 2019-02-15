@@ -22,8 +22,9 @@ public class ElevatorSubsystem extends Subsystem {
 
   DigitalInput LimitHigh = new DigitalInput(0);
   DigitalInput LimitLow = new DigitalInput(1);
-  Counter LimitCounterLow = new Counter(LimitLow);
   Counter LimitCounterHigh = new Counter(LimitHigh);
+  Counter LimitCounterLow = new Counter(LimitLow);
+  
 
   @Override
   public void initDefaultCommand() {
@@ -37,17 +38,16 @@ public class ElevatorSubsystem extends Subsystem {
     //If you are using a spark, not a spark max, it would be: .setSpeed(ElevSpeed) , instead of just .set(ElevSpeed)
     Robot.robotmap.MotorElevControl.set(ElevSpeed);
 
-/*  if(!LimitSwitchTester(LimitCounterHigh.get()) == true || !LimitSwitchTester(LimitCounterLow.get()) == true)
-    {Robot.robotmap.MotorElevControl.set(ElevSpeed);}
-    else
-    {Robot.robotmap.MotorElevControl.set(0.0);} 
-*/
-
   }
 
-  public boolean LimitSwitchTester(int LimitLowOnOff)
+  public boolean LimitSwitchHigh()
   {
-    return LimitLowOnOff > 0;
+    return this.LimitCounterHigh.get() > 0;
+  }
+
+  public boolean LimitSwitchLow()
+  {
+    return this.LimitCounterLow.get() > 0;
   }
 
   public void ElevatorUp() {

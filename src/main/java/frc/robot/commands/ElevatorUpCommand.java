@@ -9,17 +9,13 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-//import edu.wpi.first.wpilibj.DigitalInput;
-//import edu.wpi.first.wpilibj.Counter;
+import frc.robot.subsystems.ElevatorSubsystem;
 
 public class ElevatorUpCommand extends Command {
   public ElevatorUpCommand() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.elevatesub);
   }
-
-  //DigitalInput LimitHigh = new DigitalInput(0);
-  //Counter LimitCounter = new Counter(LimitHigh);
 
   // Called just before this Command runs the first time
   @Override
@@ -38,7 +34,9 @@ public class ElevatorUpCommand extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+
+    return Robot.elevatesub.LimitSwitchHigh();
+
   }
 
   // Called once after isFinished returns true

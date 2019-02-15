@@ -9,8 +9,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import edu.wpi.first.wpilibj.Counter;
-import edu.wpi.first.wpilibj.DigitalInput;
+
 
 
 public class ElevatorDownCommand extends Command {
@@ -32,17 +31,13 @@ public class ElevatorDownCommand extends Command {
   protected void execute() {
 
     Robot.elevatesub.ElevatorDown();
-    /*while(!Robot.elevatesub.LimitSwitchTester(this.LimitCounter.get()))
-    {
-      Robot.elevatesub.ElevatorSpeed(-0.3);
-    }
-    */
+  
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return Robot.elevatesub.LimitSwitchLow();
   }
 
   // Called once after isFinished returns true
