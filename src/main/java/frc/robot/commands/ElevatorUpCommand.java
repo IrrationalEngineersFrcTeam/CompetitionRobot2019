@@ -9,8 +9,8 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.Counter;
+//import edu.wpi.first.wpilibj.DigitalInput;
+//import edu.wpi.first.wpilibj.Counter;
 
 public class ElevatorUpCommand extends Command {
   public ElevatorUpCommand() {
@@ -30,12 +30,9 @@ public class ElevatorUpCommand extends Command {
   @Override
   protected void execute() 
   {
+
     Robot.elevatesub.ElevatorUp();
-    /*while(!Robot.elevatesub.LimitSwitchTester(this.LimitCounter.get()))
-    {
-      Robot.elevatesub.ElevatorSpeed(0.3);
-    }
-    */
+
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -48,11 +45,6 @@ public class ElevatorUpCommand extends Command {
   @Override
   protected void end() 
   {
-    //  if(Robot.elevatesub.LimitSwitchTester(this.LimitCounter.get()) == true)
-    //  {
-    //  System.out.println("The limit switch has been triggered!");
-    //  }
-    //  else{System.out.println("Limit not reached!!");}
 
     Robot.elevatesub.ElevatorSpeed(0.0);
 
