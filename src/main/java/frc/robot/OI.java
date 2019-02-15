@@ -53,6 +53,9 @@ public Button PlaceHatchLevel_3_Button;
   public POVButton ElevatorDown180;
   public POVButton ElevatorDown225;
 
+  public Button ElevatorUp;
+  public Button ElevatorDown;
+
 
   public OI() {
   //This tells the robot what ports these joysticks will be connected to, 
@@ -91,6 +94,9 @@ public Button PlaceHatchLevel_3_Button;
     ElevatorDown180 = new POVButton(StickL, 180);
     ElevatorDown225 = new POVButton(StickL, 225);
 
+    ElevatorDown = new JoystickButton(StickR, 9);
+    ElevatorUp = new JoystickButton(StickR, 4);
+
   //This method binds the button to a command
   //In this case the hatch button
   //  HatchGrabButton.whenPressed(new HatchGrabCommand());
@@ -121,7 +127,8 @@ public Button PlaceHatchLevel_3_Button;
     ElevatorDown180.whileHeld(new ElevatorDownCommand());
     ElevatorDown225.whileHeld(new ElevatorDownCommand());
 
-
+    ElevatorUp.whileHeld(new ElevatorDownCommand());
+    ElevatorDown.whileHeld(new ElevatorUpCommand());
 
   }
 
