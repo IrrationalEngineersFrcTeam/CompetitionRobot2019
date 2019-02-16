@@ -69,12 +69,12 @@ public Button PlaceHatchLevel_3_Button;
 
     
   //These buttons are for testing purposes, they will be phased out in the future
-    ArmExtendButton = new JoystickButton(StickL, 2);
-    ArmRetractButton = new JoystickButton(StickL, 3);
+    ArmExtendButton = new JoystickButton(StickL, 3);
+    ArmRetractButton = new JoystickButton(StickL, 2);
 
   //These are for the slider piston for the elevator
-    SliderForward = new JoystickButton(StickL, 10);
-    SliderBack = new JoystickButton(StickL, 15);
+    SliderForward = new JoystickButton(StickL, 11);
+    SliderBack = new JoystickButton(StickL, 16);
 
 
     //These buttons are the buttons for the command groups, eventually we will only have these buttons
@@ -95,7 +95,7 @@ public Button PlaceHatchLevel_3_Button;
   //   ElevatorDown225 = new POVButton(StickL, 225);
 
     ElevatorDown = new JoystickButton(StickR, 9);
-    ElevatorUp = new JoystickButton(StickR, 4);
+    ElevatorUp = new JoystickButton(StickR, 5);
 
   //This method binds the button to a command
   //In this case the hatch button
