@@ -65,7 +65,7 @@ public class Robot extends TimedRobot {
   public void robotPeriodic() {
 
     connected.setBoolean(true);
-    System.out.println(distance.getDouble(0));
+    //System.out.println(distance.getDouble(0));
     
     //piTest.setDouble(distance.getDouble(0));
     //encoderL.setDouble(leftspeed);

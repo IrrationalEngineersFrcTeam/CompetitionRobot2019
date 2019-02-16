@@ -31,7 +31,7 @@ public class DriveSubsystem extends Subsystem {
 		Robot.robotmap.MotorR1Control.set(SpeedR * .5);
     Robot.robotmap.MotorR2Control.set(SpeedR * .5);
 
-    System.out.println(Robot.robotmap.encoderL1.getVelocity());
+    //System.out.println(Robot.robotmap.encoderL1.getVelocity());
 
     
     
