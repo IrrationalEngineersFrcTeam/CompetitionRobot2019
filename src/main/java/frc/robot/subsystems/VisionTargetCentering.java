@@ -12,11 +12,11 @@ import edu.wpi.first.wpilibj.command.PIDSubsystem;
 /**
  * Add your docs here.
  */
-public class PIDCenteringSubsystem extends PIDSubsystem {
+public class VisionTargetCentering extends PIDSubsystem {
   /**
    * Add your docs here.
    */
-  public PIDCenteringSubsystem() {
+  public VisionTargetCentering() {
     // Intert a subsystem name and PID values here
     super("SubsystemName", 1, 2, 3);
     // Use these to get going:
