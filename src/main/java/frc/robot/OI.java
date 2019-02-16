@@ -96,6 +96,8 @@ public Button PlaceHatchLevel_3_Button;
 
     ElevatorDown = new JoystickButton(StickR, 5);
     ElevatorUp = new JoystickButton(StickR, 10);
+    ElevatorDown = new JoystickButton(StickR, 10);
+    ElevatorUp = new JoystickButton(StickR, 5);
 
   //This method binds the button to a command
   //In this case the hatch button
