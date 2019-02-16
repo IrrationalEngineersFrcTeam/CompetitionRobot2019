@@ -10,7 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.buttons.POVButton;
+//import edu.wpi.first.wpilibj.buttons.POVButton;
 import frc.robot.commands.HatchHoldOpenCommand;
 import frc.robot.commands.ArmExtendCommand;
 import frc.robot.commands.ArmRetractCommand;
@@ -46,12 +46,12 @@ public Button PlaceHatchLevel_2_Button;
 public Button PlaceHatchLevel_3_Button;
 
 //These are the manual elevator control buttons
-  public POVButton ElevatorUp315;
-  public POVButton ElevatorUp360;
-  public POVButton ElevatorUp45;
-  public POVButton ElevatorDown135;
-  public POVButton ElevatorDown180;
-  public POVButton ElevatorDown225;
+  // public POVButton ElevatorUp315;
+  // public POVButton ElevatorUp360;
+  // public POVButton ElevatorUp45;
+  // public POVButton ElevatorDown135;
+  // public POVButton ElevatorDown180;
+  // public POVButton ElevatorDown225;
 
   public Button ElevatorUp;
   public Button ElevatorDown;
@@ -80,19 +80,19 @@ public Button PlaceHatchLevel_3_Button;
     //These buttons are the buttons for the command groups, eventually we will only have these buttons
     //instead of seperate buttons for the ArmExtend/Retract and the elevator buttons
     //We will change the button ports later
-    PlaceHatchLevel_1_Button = new JoystickButton(StickR, 2);
-    PlaceHatchLevel_2_Button = new JoystickButton(StickR, 1);
-    PlaceHatchLevel_3_Button = new JoystickButton(StickR, 3);
+    PlaceHatchLevel_1_Button = new JoystickButton(StickR, 3);
+    PlaceHatchLevel_2_Button = new JoystickButton(StickR, 2);
+    PlaceHatchLevel_3_Button = new JoystickButton(StickR, 4);
 
   //These buttons are tied to the little joystick called the hat on the big joystick
   //These three go up
-    ElevatorUp315 = new POVButton(StickL, 315);
-    ElevatorUp360 = new POVButton(StickL, 360);
-    ElevatorUp45 = new POVButton(StickL, 45);
-  //These three go down
-    ElevatorDown135 = new POVButton(StickL, 135);
-    ElevatorDown180 = new POVButton(StickL, 180);
-    ElevatorDown225 = new POVButton(StickL, 225);
+  //   ElevatorUp315 = new POVButton(StickL, 315);
+  //   ElevatorUp360 = new POVButton(StickL, 360);
+  //   ElevatorUp45 = new POVButton(StickL, 45);
+  // //These three go down
+  //   ElevatorDown135 = new POVButton(StickL, 135);
+  //   ElevatorDown180 = new POVButton(StickL, 180);
+  //   ElevatorDown225 = new POVButton(StickL, 225);
 
     ElevatorDown = new JoystickButton(StickR, 9);
     ElevatorUp = new JoystickButton(StickR, 4);
@@ -119,13 +119,13 @@ public Button PlaceHatchLevel_3_Button;
 
   //The reason I have three for both up and down is so that it has room for user error
   //These are up
-    ElevatorUp315.whileHeld(new ElevatorUpCommand());
-    ElevatorUp360.whileHeld(new ElevatorUpCommand());
-    ElevatorUp45.whileHeld(new ElevatorUpCommand());
-  //These are down
-    ElevatorDown135.whileHeld(new ElevatorDownCommand());
-    ElevatorDown180.whileHeld(new ElevatorDownCommand());
-    ElevatorDown225.whileHeld(new ElevatorDownCommand());
+  //   ElevatorUp315.whileHeld(new ElevatorUpCommand());
+  //   ElevatorUp360.whileHeld(new ElevatorUpCommand());
+  //   ElevatorUp45.whileHeld(new ElevatorUpCommand());
+  // //These are down
+  //   ElevatorDown135.whileHeld(new ElevatorDownCommand());
+  //   ElevatorDown180.whileHeld(new ElevatorDownCommand());
+  //   ElevatorDown225.whileHeld(new ElevatorDownCommand());
 
     ElevatorUp.whileHeld(new ElevatorDownCommand());
     ElevatorDown.whileHeld(new ElevatorUpCommand());
