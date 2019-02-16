@@ -65,7 +65,7 @@ public Button PlaceHatchLevel_3_Button;
 
   //This is where we tie the code buttons to the buttons on the joysticks
   //In this case the hatch button
-    HatchHoldOpenButton = new JoystickButton(StickR, 0);
+    HatchHoldOpenButton = new JoystickButton(StickR, 1);
 
     
   //These buttons are for testing purposes, they will be phased out in the future
@@ -74,7 +74,7 @@ public Button PlaceHatchLevel_3_Button;
 
   //These are for the slider piston for the elevator
     SliderForward = new JoystickButton(StickL, 10);
-    SliderBack = new JoystickButton(StickL, 14);
+    SliderBack = new JoystickButton(StickL, 15);
 
 
     //These buttons are the buttons for the command groups, eventually we will only have these buttons
