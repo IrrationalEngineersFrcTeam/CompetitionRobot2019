@@ -36,7 +36,8 @@ public class ElevatorUpCommand extends Command {
   @Override
   protected boolean isFinished() {
 
-    return Robot.elevatesub.LimitSwitchHigh();
+    //return Robot.elevatesub.LimitSwitchHigh;();
+    return false;
 
   }
 
@@ -53,5 +54,6 @@ public class ElevatorUpCommand extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    end();
   }
 }
