@@ -5,24 +5,24 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.autoCommands;
+package frc.robot.commandGroups;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.commands.ElevatorDownCommand;
-import frc.robot.commands.ArmExtendCommand;
+import frc.robot.commands.ArmRetractCommand;
 
-public class PlaceHatchLevel_2 extends CommandGroup {
+public class PlaceHatchLevel_1 extends CommandGroup {
   /**
    * Add your docs here.
    */
-  public PlaceHatchLevel_2() {
+  public PlaceHatchLevel_1() {
     // Add Commands here:
     // e.g. addSequential(new Command1());
     //      addSequential(new Command2());
     // these will run in order.
 
-    addParallel(new ElevatorDownCommand());
-    addSequential(new ArmExtendCommand());
+    addSequential(new ElevatorDownCommand());
+    addSequential(new ArmRetractCommand());
 
     // To run multiple commands at the same time,
     // use addParallel()

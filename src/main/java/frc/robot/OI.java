@@ -12,15 +12,16 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 //import edu.wpi.first.wpilibj.buttons.POVButton;
 import frc.robot.commands.HatchHoldOpenCommand;
+import frc.robot.commandGroups.PlaceHatchLevel_1;
+import frc.robot.commandGroups.PlaceHatchLevel_2;
+import frc.robot.commandGroups.PlaceHatchLevel_3;
 import frc.robot.commands.ArmExtendCommand;
 import frc.robot.commands.ArmRetractCommand;
 import frc.robot.commands.ElevatorUpCommand;
 import frc.robot.commands.ElevatorDownCommand;
 import frc.robot.commands.SlideElevatorForwardCommand;
 import frc.robot.commands.SlideElevatorBackCommand;
-import frc.robot.autoCommands.PlaceHatchLevel_1;
-import frc.robot.autoCommands.PlaceHatchLevel_2;
-import frc.robot.autoCommands.PlaceHatchLevel_3;
+
 
 
 public class OI {
@@ -96,8 +97,7 @@ public Button PlaceHatchLevel_3_Button;
 
     ElevatorDown = new JoystickButton(StickR, 5);
     ElevatorUp = new JoystickButton(StickR, 10);
-    ElevatorDown = new JoystickButton(StickR, 10);
-    ElevatorUp = new JoystickButton(StickR, 5);
+
 
   //This method binds the button to a command
   //In this case the hatch button
@@ -105,7 +105,7 @@ public Button PlaceHatchLevel_3_Button;
   //Iedited it so that HatchGrab is now useless
     HatchHoldOpenButton.whileHeld(new HatchHoldOpenCommand());
     /*
-    //These are temperary
+    //These are temporary
     */
     ArmExtendButton.whenPressed(new ArmExtendCommand());
     ArmRetractButton.whenPressed(new ArmRetractCommand());
@@ -129,8 +129,8 @@ public Button PlaceHatchLevel_3_Button;
   //   ElevatorDown180.whileHeld(new ElevatorDownCommand());
   //   ElevatorDown225.whileHeld(new ElevatorDownCommand());
 
-    ElevatorUp.whileHeld(new ElevatorDownCommand());
-    ElevatorDown.whileHeld(new ElevatorUpCommand());
+    ElevatorUp.whileHeld(new ElevatorUpCommand());
+    ElevatorDown.whileHeld(new ElevatorDownCommand());
 
   }
 
