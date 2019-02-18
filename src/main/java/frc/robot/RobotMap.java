@@ -65,7 +65,7 @@ public class RobotMap {
     MotorL2Control = new CANSparkMax(MotorL2 , MotorType.kBrushless);
     MotorR1Control = new CANSparkMax(MotorR1 , MotorType.kBrushless);
     MotorR2Control = new CANSparkMax(MotorR2 , MotorType.kBrushless);
-    //MotorElevControl = new CANSparkMax(MotorE1, MotorType.kBrushless);
+    //MotorElevControl = new CANSparkMax(MotorE1 , MotorType.kBrushed);
     MotorElevControl = new Spark(MotorE1);
 
     encoderL1 = new CANEncoder(MotorL1Control);

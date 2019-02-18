@@ -18,9 +18,6 @@ public class ElevatorDownCommand extends Command {
     requires(Robot.elevatesub);
   }
 
-  //DigitalInput LimitLow = new DigitalInput(1);
-  //Counter LimitCounter = new Counter(LimitLow);
-
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
@@ -37,8 +34,9 @@ public class ElevatorDownCommand extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    //return Robot.elevatesub.LimitSwitchLow();
-    return false;
+
+    return Robot.elevatesub.LimitSwitchLow();
+
   }
 
   // Called once after isFinished returns true

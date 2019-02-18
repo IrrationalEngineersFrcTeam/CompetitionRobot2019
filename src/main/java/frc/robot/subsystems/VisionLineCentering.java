@@ -13,10 +13,11 @@ import frc.robot.RobotMap;
 /**
  * Add your docs here.
  */
-public class CenteringOnLineSubsystem extends PIDSubsystem {
-
-  
-  public CenteringOnLineSubsystem() {
+public class VisionLineCentering extends PIDSubsystem {
+  /**
+   * Add your docs here.
+   */
+  public VisionLineCentering() {
     // Intert a subsystem name and PID values here
     super("SubsystemName", 1, 2, 3);
     // Use these to get going:
