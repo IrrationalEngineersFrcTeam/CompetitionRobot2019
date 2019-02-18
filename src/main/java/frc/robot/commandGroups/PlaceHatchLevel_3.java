@@ -21,8 +21,8 @@ public class PlaceHatchLevel_3 extends CommandGroup {
     //      addSequential(new Command2());
     // these will run in order.
 
-    addSequential(new ElevatorUpCommand());
     addSequential(new ArmExtendCommand());
+    addSequential(new ElevatorUpCommand());
 
     // To run multiple commands at the same time,
     // use addParallel()
