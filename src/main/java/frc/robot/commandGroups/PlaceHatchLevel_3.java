@@ -24,8 +24,8 @@ public class PlaceHatchLevel_3 extends CommandGroup {
     // these will run in order.
 
     requires(Robot.elevateslidesub);
-    requires(Robot.elevatesub);
     requires(Robot.armsub);
+    requires(Robot.elevatesub);
 
     addSequential(new SlideElevatorBackCommand(), 1);
     System.out.println("Sliding Back");
