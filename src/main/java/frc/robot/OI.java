@@ -77,15 +77,6 @@ public Button PlaceHatchLevel_3_Button;
     PlaceHatchLevel_2_Button = new JoystickButton(StickR, 2);
     PlaceHatchLevel_3_Button = new JoystickButton(StickR, 4);
 
-  //These buttons are tied to the little joystick called the hat on the big joystick
-  //These three go up
-  //   ElevatorUp315 = new POVButton(StickL, 315);
-  //   ElevatorUp360 = new POVButton(StickL, 360);
-  //   ElevatorUp45 = new POVButton(StickL, 45);
-  // //These three go down
-  //   ElevatorDown135 = new POVButton(StickL, 135);
-  //   ElevatorDown180 = new POVButton(StickL, 180);
-  //   ElevatorDown225 = new POVButton(StickL, 225);
     //Spool should be wound on the left
     ElevatorDown = new JoystickButton(StickR, 10);
     ElevatorUp = new JoystickButton(StickR, 5);
@@ -93,12 +84,10 @@ public Button PlaceHatchLevel_3_Button;
 
   //This method binds the button to a command
   //In this case the hatch button
-  //  HatchGrabButton.whenPressed(new HatchGrabCommand());
-  //Iedited it so that HatchGrab is now useless
+  //I edited it so that HatchGrab is now useless
     HatchHoldOpenButton.whileHeld(new HatchHoldOpenCommand());
-    /*
-    //These are temporary
-    */
+
+  //These are temporary
     ArmExtendButton.whenPressed(new ArmExtendCommand());
     ArmRetractButton.whenPressed(new ArmRetractCommand());
 

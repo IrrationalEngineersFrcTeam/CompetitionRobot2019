@@ -28,8 +28,11 @@ public class PlaceHatchLevel_1 extends CommandGroup {
     requires(Robot.elevatesub);
 
     addSequential(new ElevatorDownCommand());
+    System.out.println("Elevator Going Down");
     addSequential(new ArmRetractCommand());
+    System.out.println("Retracting Arm");
     addSequential(new SlideElevatorForwardCommand());
+    System.out.println("Sliding Forward");
 
     // To run multiple commands at the same time,
     // use addParallel()

@@ -9,6 +9,7 @@ package frc.robot.commandGroups;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.commands.ElevatorDownCommand;
+import frc.robot.Robot;
 import frc.robot.commands.ArmExtendCommand;
 import frc.robot.commands.SlideElevatorBackCommand;
 
@@ -22,9 +23,16 @@ public class PlaceHatchLevel_2 extends CommandGroup {
     //      addSequential(new Command2());
     // these will run in order.
 
+    requires(Robot.elevateslidesub);
+    requires(Robot.armsub);
+    requires(Robot.elevatesub);
+
     addSequential(new SlideElevatorBackCommand());
+    System.out.println("Sliding Back");
     addSequential(new ElevatorDownCommand());
+    System.out.println("Extending Arm");
     addSequential(new ArmExtendCommand());
+    System.out.println("Elevator Going Down");
 
     // To run multiple commands at the same time,
     // use addParallel()
