@@ -35,8 +35,8 @@ public class ElevatorDownCommand extends Command {
   @Override
   protected boolean isFinished() {
 
-    return Robot.elevatesub.LimitSwitchLow();
-
+    //return !Robot.elevatesub.LimitSwitchLow();
+    return false;
   }
 
   // Called once after isFinished returns true

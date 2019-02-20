@@ -22,8 +22,6 @@ public class ElevatorSubsystem extends Subsystem {
 
   DigitalInput LimitHigh = new DigitalInput(0);
   DigitalInput LimitLow = new DigitalInput(1);
-  Counter LimitCounterHigh = new Counter(LimitHigh);
-  Counter LimitCounterLow = new Counter(LimitLow);
   
 
   @Override
@@ -41,12 +39,12 @@ public class ElevatorSubsystem extends Subsystem {
 
   public boolean LimitSwitchHigh()
   {
-    return this.LimitCounterHigh.get() > 0;
+    return this.LimitHigh.get();
   }
 
   public boolean LimitSwitchLow()
   {
-    return this.LimitCounterLow.get() > 0;
+    return this.LimitLow.get();
   }
 
   public void ElevatorUp() {
