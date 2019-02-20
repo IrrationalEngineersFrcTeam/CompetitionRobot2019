@@ -10,7 +10,6 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-//import edu.wpi.first.wpilibj.buttons.POVButton;
 import frc.robot.commands.HatchHoldOpenCommand;
 import frc.robot.commandGroups.PlaceHatchLevel_1;
 import frc.robot.commandGroups.PlaceHatchLevel_2;
@@ -47,13 +46,6 @@ public Button PlaceHatchLevel_2_Button;
 public Button PlaceHatchLevel_3_Button;
 
 //These are the manual elevator control buttons
-  // public POVButton ElevatorUp315;
-  // public POVButton ElevatorUp360;
-  // public POVButton ElevatorUp45;
-  // public POVButton ElevatorDown135;
-  // public POVButton ElevatorDown180;
-  // public POVButton ElevatorDown225;
-
   public Button ElevatorUp;
   public Button ElevatorDown;
 
@@ -119,20 +111,11 @@ public Button PlaceHatchLevel_3_Button;
     PlaceHatchLevel_2_Button.whenPressed(new PlaceHatchLevel_2());
     PlaceHatchLevel_3_Button.whenPressed(new PlaceHatchLevel_3());
 
-  //The reason I have three for both up and down is so that it has room for user error
-  //These are up
-  //   ElevatorUp315.whileHeld(new ElevatorUpCommand());
-  //   ElevatorUp360.whileHeld(new ElevatorUpCommand());
-  //   ElevatorUp45.whileHeld(new ElevatorUpCommand());
-  // //These are down
-  //   ElevatorDown135.whileHeld(new ElevatorDownCommand());
-  //   ElevatorDown180.whileHeld(new ElevatorDownCommand());
-  //   ElevatorDown225.whileHeld(new ElevatorDownCommand());
-
+  //Elevator commands
     ElevatorUp.whileHeld(new ElevatorUpCommand());
     ElevatorDown.whileHeld(new ElevatorDownCommand());
 
   }
 
- 
+
 }
