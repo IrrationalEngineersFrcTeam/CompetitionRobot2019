@@ -94,9 +94,9 @@ public Button PlaceHatchLevel_3_Button;
   //   ElevatorDown135 = new POVButton(StickL, 135);
   //   ElevatorDown180 = new POVButton(StickL, 180);
   //   ElevatorDown225 = new POVButton(StickL, 225);
-
-    ElevatorDown = new JoystickButton(StickR, 5);
-    ElevatorUp = new JoystickButton(StickR, 10);
+    //Spool should be wound on the left
+    ElevatorDown = new JoystickButton(StickR, 10);
+    ElevatorUp = new JoystickButton(StickR, 5);
 
 
   //This method binds the button to a command
