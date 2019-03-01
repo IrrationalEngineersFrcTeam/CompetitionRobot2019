@@ -17,6 +17,8 @@ public class VisionLineCentering extends PIDSubsystem {
   /**
    * Add your docs here.
    */
+  int lineCenteringInt = Robot.LineCenteringDistance;
+
   public VisionLineCentering() {
     // Intert a subsystem name and PID values here
     super("Centering on Line", 0.0, 0.0, 0.0);
@@ -43,13 +45,13 @@ public class VisionLineCentering extends PIDSubsystem {
     // Return your input value for the PID loop
     // e.g. a sensor, like a potentiometer:
     // yourPot.getAverageVoltage() / kYourMaxVoltage;
-    return 0.0;
+    return lineCenteringInt;
   }
 
   @Override
   protected void usePIDOutput(double output) {
-    // Use output to drive your system, like a motor
-    // e.g. yourMotor.set(output);
+    
+    double LineCenteringOutput = output;
     
   }
 }
