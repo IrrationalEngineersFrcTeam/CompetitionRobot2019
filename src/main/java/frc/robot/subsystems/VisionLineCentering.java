@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
+import frc.robot.Robot;
 
 /**
  * Add your docs here.
@@ -18,12 +19,18 @@ public class VisionLineCentering extends PIDSubsystem {
    */
   public VisionLineCentering() {
     // Intert a subsystem name and PID values here
-    super("SubsystemName", 1, 2, 3);
+    super("Centering on Line", 0.0, 0.0, 0.0);
+    setSetpoint(0.0);
+    setAbsoluteTolerance(10);
+    setInputRange(-100, 100);
+    setOutputRange(-1, 1);
     // Use these to get going:
     // setSetpoint() - Sets where the PID controller should move the system
     // to
     // enable() - Enables the PID controller.
+
   }
+
 
   @Override
   public void initDefaultCommand() {
@@ -43,5 +50,6 @@ public class VisionLineCentering extends PIDSubsystem {
   protected void usePIDOutput(double output) {
     // Use output to drive your system, like a motor
     // e.g. yourMotor.set(output);
+    
   }
 }

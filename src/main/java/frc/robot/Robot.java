@@ -38,6 +38,7 @@ public class Robot extends TimedRobot {
   public static NetworkTableEntry piTest;
   public static NetworkTableEntry encoderL;
   public static NetworkTableEntry encoderR;
+  public static int LineCenteringDistance;
   
   @Override
   public void robotInit() {
@@ -65,6 +66,8 @@ public class Robot extends TimedRobot {
   public void robotPeriodic() {
 
     connected.setBoolean(true);
+    LineCenteringDistance = MateosNumberHeWillBePassingToThisClassToBeRenamedLater;
+    
     //System.out.println(distance.getDouble(0));
     
     //piTest.setDouble(distance.getDouble(0));
