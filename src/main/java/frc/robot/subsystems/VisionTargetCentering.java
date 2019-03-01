@@ -18,7 +18,7 @@ public class VisionTargetCentering extends PIDSubsystem {
    */
   public VisionTargetCentering() {
     // Insert a subsystem name and PID values here
-    super("VisionTargetCentering", 0.8, 0.0, 0.0);
+    super("VisionTargetCentering", 0.08, 0.0, 0.0);
     // Use these to get going:
     // setSetpoint() - Sets where the PID controller should move the system
     // to
