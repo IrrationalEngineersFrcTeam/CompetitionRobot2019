@@ -17,7 +17,7 @@ public class VisionLineCentering extends PIDSubsystem {
   /**
    * Add your docs here.
    */    
-  public double output;
+  public double lineoutput;
 
   public VisionLineCentering() {
     // Intert a subsystem name and PID values here
@@ -45,13 +45,13 @@ public class VisionLineCentering extends PIDSubsystem {
     // Return your input value for the PID loop
     // e.g. a sensor, like a potentiometer:
     // yourPot.getAverageVoltage() / kYourMaxVoltage;
-    return 0;
+    return Robot.LineCenteringDistance.getDouble(0);
   }
 
   @Override
   protected void usePIDOutput(double output) {
     
-    this.output = output;
+    this.lineoutput = output;
     
   }
 }

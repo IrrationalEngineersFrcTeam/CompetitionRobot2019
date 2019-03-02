@@ -38,6 +38,7 @@ public class Robot extends TimedRobot {
   public static NetworkTable camera2Table;
   public static NetworkTableEntry connected;
   public static NetworkTableEntry VisionTargetDist;
+  public static NetworkTableEntry LineCenteringDistance;
   public static NetworkTableEntry piTest;
   public static NetworkTableEntry encoderL;
   public static NetworkTableEntry encoderR;
@@ -60,6 +61,7 @@ public class Robot extends TimedRobot {
   camera2Table = inst.getTable("Camera2");
   connected = smartDashboardTable.getEntry("robotConnection");
   VisionTargetDist = camera1Table.getEntry("distance");
+  LineCenteringDistance = camera2Table.getEntry("yDiff");
   encoderL = smartDashboardTable.getEntry("encoderL");
   encoderR = smartDashboardTable.getEntry("encoderR");
   piTest = smartDashboardTable.getEntry("timeRunning");
