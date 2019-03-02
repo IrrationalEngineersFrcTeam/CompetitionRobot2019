@@ -33,6 +33,7 @@ public class Robot extends TimedRobot {
   public static ArmSubsystem armsub;
   public static ElevatorSliderSubsystem elevateslidesub;
   public static AutoAssistCenteringSubsystem autocenteringsub;
+  public static VisionLineCentering lineCentering;
   public static NetworkTableInstance inst;
   public static NetworkTable smartDashboardTable;
   public static NetworkTable camera1Table;
