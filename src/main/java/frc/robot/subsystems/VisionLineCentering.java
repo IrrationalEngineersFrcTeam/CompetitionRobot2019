@@ -24,7 +24,7 @@ public class VisionLineCentering extends PIDSubsystem {
     super("Centering on Line", 0.0, 0.0, 0.0);
     setSetpoint(0.0);
     setAbsoluteTolerance(10);
-    setInputRange(-100, 100);
+    setInputRange(-180, 180);
     setOutputRange(-1, 1);
     // Use these to get going:
     // setSetpoint() - Sets where the PID controller should move the system
