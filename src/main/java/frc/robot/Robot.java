@@ -20,7 +20,7 @@ import frc.robot.subsystems.ElevatorSliderSubsystem;
 import frc.robot.subsystems.ElevatorSubsystem;
 import frc.robot.subsystems.HatchMechanismSubsystem;
 import frc.robot.subsystems.VisionLineCentering;
-import frc.robot.subsystems.VisionTargetCentering;
+import frc.robot.subsystems.AutoAssistCenteringSubsystem;
 
 
 public class Robot extends TimedRobot {
@@ -32,6 +32,8 @@ public class Robot extends TimedRobot {
   public static ElevatorSubsystem elevatesub;
   public static ArmSubsystem armsub;
   public static ElevatorSliderSubsystem elevateslidesub;
+  public static AutoAssistCenteringSubsystem autoassistcentsub;
+  public static VisionLineCentering lineCentering;
   public static NetworkTableInstance inst;
   public static NetworkTable smartDashboardTable;
   public static NetworkTable camera1Table;
@@ -55,6 +57,8 @@ public class Robot extends TimedRobot {
   oi = new OI();
   robotmap = new RobotMap();
   drivesub = new DriveSubsystem();
+  autoassistcentsub = new AutoAssistCenteringSubsystem();
+  lineCentering = new VisionLineCentering();
   inst = NetworkTableInstance.getDefault();
   smartDashboardTable = inst.getTable("SmartDashboard");
   camera1Table = inst.getTable("Camera1");
