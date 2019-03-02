@@ -33,11 +33,13 @@ public class Robot extends TimedRobot {
   public static NetworkTableInstance inst;
   public static NetworkTable smartDashboardTable;
   public static NetworkTable camera1Table;
+  public static NetworkTable camera2Table;
   public static NetworkTableEntry connected;
   public static NetworkTableEntry VisionTargetDist;
   public static NetworkTableEntry piTest;
   public static NetworkTableEntry encoderL;
   public static NetworkTableEntry encoderR;
+  public static NetworkTableEntry VisionTargetCentering;
 
   
   @Override
@@ -52,7 +54,8 @@ public class Robot extends TimedRobot {
   drivesub = new DriveSubsystem();
   inst = NetworkTableInstance.getDefault();
   smartDashboardTable = inst.getTable("SmartDashboard");
-  camera1Table = inst.getTable("RaspberryPi");
+  camera1Table = inst.getTable("Camera1");
+  camera2Table = inst.getTable("Camera2");
   connected = smartDashboardTable.getEntry("robotConnection");
   VisionTargetDist = camera1Table.getEntry("distance");
   encoderL = smartDashboardTable.getEntry("encoderL");
