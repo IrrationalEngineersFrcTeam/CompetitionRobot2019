@@ -45,7 +45,7 @@ public class Robot extends TimedRobot {
   public static NetworkTableEntry encoderL;
   public static NetworkTableEntry encoderR;
   public static NetworkTableEntry VisionTargetCentering;
-  public static NetworkTableEntry VisionTargetIsSeen;
+  public static boolean VisionTargetIsSeen;
 
   
   @Override
