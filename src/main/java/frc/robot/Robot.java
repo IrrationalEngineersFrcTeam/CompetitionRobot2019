@@ -45,6 +45,7 @@ public class Robot extends TimedRobot {
   public static NetworkTableEntry encoderR;
   public static NetworkTableEntry VisionTargetCentering;
   public static NetworkTableEntry VisionTargetIsSeen;
+  public static VisionLineCentering lineCentering;
 
   
   @Override
@@ -65,7 +66,7 @@ public class Robot extends TimedRobot {
   connected = smartDashboardTable.getEntry("robotConnection");
   VisionTargetDist = camera1Table.getEntry("distance");
   LineCenteringDistance = camera2Table.getEntry("yDiff");
-  VisionTargetIsSeen = camera1Table.getEntry("isSeen")
+  VisionTargetIsSeen = camera1Table.getEntry("isSeen");
   encoderL = smartDashboardTable.getEntry("encoderL");
   encoderR = smartDashboardTable.getEntry("encoderR");
   piTest = smartDashboardTable.getEntry("timeRunning");
