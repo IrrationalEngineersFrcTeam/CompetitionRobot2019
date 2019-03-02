@@ -12,7 +12,8 @@ import frc.robot.Robot;
 
 
 /**
- * Add your docs here.
+ * This subsystem is here to be used by the commands because the pidsubsystem cannot
+ * be initialized in robotInit
  */
 public class AutoAssistCenteringSubsystem extends Subsystem 
 {

@@ -32,8 +32,7 @@ public class Robot extends TimedRobot {
   public static ElevatorSubsystem elevatesub;
   public static ArmSubsystem armsub;
   public static ElevatorSliderSubsystem elevateslidesub;
-  public static AutoAssistCenteringSubsystem autoassistcentsub;
-  public static VisionLineCentering lineCentering;
+  public static AutoAssistCenteringSubsystem autocenteringsub;
   public static NetworkTableInstance inst;
   public static NetworkTable smartDashboardTable;
   public static NetworkTable camera1Table;
@@ -45,11 +44,13 @@ public class Robot extends TimedRobot {
   public static NetworkTableEntry encoderL;
   public static NetworkTableEntry encoderR;
   public static NetworkTableEntry VisionTargetCentering;
+  public static NetworkTableEntry VisionTargetIsSeen;
 
   
   @Override
   public void robotInit() {
   
+  autocenteringsub = new AutoAssistCenteringSubsystem();
   hatchmechsub = new HatchMechanismSubsystem();
   elevatesub = new ElevatorSubsystem();
   armsub = new ArmSubsystem();
@@ -66,6 +67,7 @@ public class Robot extends TimedRobot {
   connected = smartDashboardTable.getEntry("robotConnection");
   VisionTargetDist = camera1Table.getEntry("distance");
   LineCenteringDistance = camera2Table.getEntry("yDiff");
+  VisionTargetIsSeen = camera1Table.getEntry("isSeen")
   encoderL = smartDashboardTable.getEntry("encoderL");
   encoderR = smartDashboardTable.getEntry("encoderR");
   piTest = smartDashboardTable.getEntry("timeRunning");
