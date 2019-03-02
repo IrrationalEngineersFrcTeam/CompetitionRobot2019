@@ -9,7 +9,6 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.Robot;
-import frc.robot.subsystems.VisionLineCentering;
 
 
 /**
@@ -28,6 +27,9 @@ public class AutoAssistCenteringSubsystem extends Subsystem
   }
   public void DriveOverLine()
   {
-    Robot.robotmap.MotorL1Control.set(Robot.lineCentering.getOutput());
+    Robot.robotmap.MotorL1Control.set(-Robot.lineCentering.getOutput() * .5);
+    Robot.robotmap.MotorL2Control.set(-Robot.lineCentering.getOutput() * .5);
+    Robot.robotmap.MotorR1Control.set(Robot.lineCentering.getOutput() * .5);
+    Robot.robotmap.MotorR2Control.set(Robot.lineCentering.getOutput() * .5);
   }
 }
