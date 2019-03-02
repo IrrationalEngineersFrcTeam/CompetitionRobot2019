@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
+import frc.robot.Robot;
 
 /**
  * Add your docs here.
@@ -18,7 +19,7 @@ public class VisionTargetCentering extends PIDSubsystem {
    */
   public VisionTargetCentering() {
     // Insert a subsystem name and PID values here
-    super("VisionTargetCentering", 0.08, 0.0, 0.0);
+    super("VisionTargetCentering", 0.08, 0.0, 0.004);
     // Use these to get going:
     // setSetpoint() - Sets where the PID controller should move the system
     // to
@@ -42,7 +43,9 @@ public class VisionTargetCentering extends PIDSubsystem {
     // Return your input value for the PID loop
     // e.g. a sensor, like a potentiometer:
     // yourPot.getAverageVoltage() / kYourMaxVoltage;
-    return 0.0;
+
+    return Robot.VisionTargetDist.getDouble(0);
+    
   }
 
   @Override
