@@ -19,6 +19,8 @@ import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ElevatorSliderSubsystem;
 import frc.robot.subsystems.ElevatorSubsystem;
 import frc.robot.subsystems.HatchMechanismSubsystem;
+import frc.robot.subsystems.VisionLineCentering;
+import frc.robot.subsystems.VisionTargetCentering;
 
 
 public class Robot extends TimedRobot {
