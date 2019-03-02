@@ -54,9 +54,4 @@ public class VisionLineCentering extends PIDSubsystem {
     this.lineoutput = output;
     
   }
-
-  public double getOutput() {
-    return lineoutput;
-  }
-
 }

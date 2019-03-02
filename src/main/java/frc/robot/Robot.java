@@ -58,8 +58,6 @@ public class Robot extends TimedRobot {
   oi = new OI();
   robotmap = new RobotMap();
   drivesub = new DriveSubsystem();
-  autoassistcentsub = new AutoAssistCenteringSubsystem();
-  lineCentering = new VisionLineCentering();
   inst = NetworkTableInstance.getDefault();
   smartDashboardTable = inst.getTable("SmartDashboard");
   camera1Table = inst.getTable("Camera1");

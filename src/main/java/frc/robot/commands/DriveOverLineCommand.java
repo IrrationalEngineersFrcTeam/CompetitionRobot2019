@@ -8,7 +8,6 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
 
 
 public class DriveOverLineCommand extends Command {
@@ -17,6 +16,7 @@ public class DriveOverLineCommand extends Command {
     // eg. requires(chassis);
 
     requires(Robot.autocenteringsub);
+    requires();
 
   }
 
@@ -28,7 +28,7 @@ public class DriveOverLineCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.autoassistcentsub.DriveOverLine();
+    Robot.autocenteringsub.DriveOverLine();
   }
 
   // Make this return true when this Command no longer needs to run execute()
