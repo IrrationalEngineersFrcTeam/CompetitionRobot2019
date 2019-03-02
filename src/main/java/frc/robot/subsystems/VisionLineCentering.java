@@ -16,8 +16,10 @@ import frc.robot.Robot;
 public class VisionLineCentering extends PIDSubsystem {
   /**
    * Add your docs here.
-   */
-  int lineCenteringInt = Robot.LineCenteringDistance;
+   */    
+  public double output;
+
+  int lineCenteringInput = Robot.LineCenteringDistance;
 
   public VisionLineCentering() {
     // Intert a subsystem name and PID values here
@@ -45,13 +47,13 @@ public class VisionLineCentering extends PIDSubsystem {
     // Return your input value for the PID loop
     // e.g. a sensor, like a potentiometer:
     // yourPot.getAverageVoltage() / kYourMaxVoltage;
-    return lineCenteringInt;
+    return lineCenteringInput;
   }
 
   @Override
   protected void usePIDOutput(double output) {
     
-    double LineCenteringOutput = output;
+    this.output = output;
     
   }
 }
