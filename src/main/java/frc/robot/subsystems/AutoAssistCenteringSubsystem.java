@@ -21,25 +21,34 @@ public class AutoAssistCenteringSubsystem extends Subsystem
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  public boolean IsTargetSeen = Robot.VisionTargetIsSeen;
+  //public boolean IsSeen = Robot.VisionTargetIsSeen.getBoolean(Robot.VisionTargetIsSeen);
   //public double PIDOutput = ;
 
-  public void FindTarget()
-  {
-    if(this.IsTargetSeen == false)
-    {
-      Robot.drivesub.DriveCommand(-0.3, 0.3);
-    }
-    else
-    {
-      Robot.drivesub.DriveCommand(0, 0);
-    }
-  }
+  // public void FindTarget()
+  // {
+  //   if(this.IsSeen == false)
+  //   {
+  //     Robot.drivesub.DriveCommand(-0.3, 0.3);
+  //   }
+  //   else
+  //   {
+  //     Robot.drivesub.DriveCommand(0, 0);
+  //   }
+  // }
+
+  double Output = VisionTargetCentering.getOutput();
 
   public void CenterOnTarget()
   {
 
-
+    if(Output > 0)
+    {
+      Robot.drivesub.DriveCommand(0, 0 + Output);
+    }
+    else if(Output < 0)
+    {
+      Robot.drivesub.DriveCommand(0 + Output, 0);
+    }
 
   }
 

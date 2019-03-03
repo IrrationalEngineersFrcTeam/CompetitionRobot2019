@@ -16,6 +16,7 @@ import frc.robot.commandGroups.PlaceHatchLevel_2;
 import frc.robot.commandGroups.PlaceHatchLevel_3;
 import frc.robot.commands.ArmExtendCommand;
 import frc.robot.commands.ArmRetractCommand;
+import frc.robot.commands.CenterOnVisTargetCommand;
 import frc.robot.commands.ElevatorUpCommand;
 import frc.robot.commands.ElevatorDownCommand;
 import frc.robot.commands.SlideElevatorForwardCommand;
@@ -49,6 +50,9 @@ public Button PlaceHatchLevel_3_Button;
   public Button ElevatorUp;
   public Button ElevatorDown;
 
+//Vision buttons
+  public Button RunPIDTarget;
+
 
   public OI() {
   //This tells the robot what ports these joysticks will be connected to, 
@@ -70,16 +74,19 @@ public Button PlaceHatchLevel_3_Button;
     SliderBack = new JoystickButton(StickL, 16);
 
 
-    //These buttons are the buttons for the command groups, eventually we will only have these buttons
-    //instead of seperate buttons for the ArmExtend/Retract and the elevator buttons
-    //We will change the button ports later
+  //These buttons are the buttons for the command groups, eventually we will only have these buttons
+  //instead of seperate buttons for the ArmExtend/Retract and the elevator buttons
+  //We will change the button ports later
     PlaceHatchLevel_1_Button = new JoystickButton(StickR, 3);
     PlaceHatchLevel_2_Button = new JoystickButton(StickR, 2);
     PlaceHatchLevel_3_Button = new JoystickButton(StickR, 4);
 
-    //Spool should be wound on the left
+  //Spool should be wound on the left
     ElevatorDown = new JoystickButton(StickR, 10);
     ElevatorUp = new JoystickButton(StickR, 5);
+
+  //These are the PID buttons
+    RunPIDTarget = new JoystickButton(StickL, 7);
 
 
   //This method binds the button to a command
@@ -103,6 +110,9 @@ public Button PlaceHatchLevel_3_Button;
   //Elevator commands
     ElevatorUp.whileHeld(new ElevatorUpCommand());
     ElevatorDown.whileHeld(new ElevatorDownCommand());
+
+  //PID commands
+    RunPIDTarget.whenPressed(new CenterOnVisTargetCommand());
 
   }
 
