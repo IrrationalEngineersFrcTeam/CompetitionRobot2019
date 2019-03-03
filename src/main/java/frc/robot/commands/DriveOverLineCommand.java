@@ -14,7 +14,6 @@ import frc.robot.Robot;
 public class DriveOverLineCommand extends Command {
   public DriveOverLineCommand() {
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
 
     requires(Robot.autocenteringsub);
 

@@ -20,6 +20,7 @@ import frc.robot.commands.ElevatorUpCommand;
 import frc.robot.commands.ElevatorDownCommand;
 import frc.robot.commands.SlideElevatorForwardCommand;
 import frc.robot.commands.SlideElevatorBackCommand;
+import frc.robot.commands.DriveOverLineCommand;
 
 
 
@@ -48,6 +49,9 @@ public Button PlaceHatchLevel_3_Button;
 //These are the manual elevator control buttons
   public Button ElevatorUp;
   public Button ElevatorDown;
+
+//Another test button for testing the pid code that centers the robot over the line
+  public Button CenterOnLine;
 
 
   public OI() {
@@ -81,6 +85,8 @@ public Button PlaceHatchLevel_3_Button;
     ElevatorDown = new JoystickButton(StickR, 10);
     ElevatorUp = new JoystickButton(StickR, 5);
 
+    CenterOnLine = new JoystickButton(StickR, 11);
+
 
   //This method binds the button to a command
   //In this case the hatch button
@@ -103,6 +109,8 @@ public Button PlaceHatchLevel_3_Button;
   //Elevator commands
     ElevatorUp.whileHeld(new ElevatorUpCommand());
     ElevatorDown.whileHeld(new ElevatorDownCommand());
+
+    CenterOnLine.whileHeld(new DriveOverLineCommand());
 
   }
 
