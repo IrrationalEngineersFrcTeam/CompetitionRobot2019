@@ -70,7 +70,6 @@ public class Robot extends TimedRobot {
   encoderL = smartDashboardTable.getEntry("encoderL");
   encoderR = smartDashboardTable.getEntry("encoderR");
   piTest = smartDashboardTable.getEntry("timeRunning");
-  boolean IsTargetSeen = VisionTargetIsSeen.getBoolean(true);
 
   }
 
