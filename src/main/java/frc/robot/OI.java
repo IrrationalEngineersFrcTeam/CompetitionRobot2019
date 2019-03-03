@@ -18,6 +18,7 @@ import frc.robot.commands.ArmExtendCommand;
 import frc.robot.commands.ArmRetractCommand;
 import frc.robot.commands.CenterOnVisTargetCommand;
 import frc.robot.commands.ElevatorUpCommand;
+import frc.robot.commands.FindVisionTargetCommand;
 import frc.robot.commands.ElevatorDownCommand;
 import frc.robot.commands.SlideElevatorForwardCommand;
 import frc.robot.commands.SlideElevatorBackCommand;
@@ -52,6 +53,7 @@ public Button PlaceHatchLevel_3_Button;
 
 //Vision buttons
   public Button RunPIDTarget;
+  public Button FindVisTarget;
 
 
   public OI() {
@@ -87,6 +89,7 @@ public Button PlaceHatchLevel_3_Button;
 
   //These are the PID buttons
     RunPIDTarget = new JoystickButton(StickL, 7);
+    FindVisTarget = new JoystickButton(StickL, 8);
 
 
   //This method binds the button to a command
@@ -113,6 +116,7 @@ public Button PlaceHatchLevel_3_Button;
 
   //PID commands
     RunPIDTarget.whenPressed(new CenterOnVisTargetCommand());
+    FindVisTarget.whenPressed(new FindVisionTargetCommand());
 
   }
 

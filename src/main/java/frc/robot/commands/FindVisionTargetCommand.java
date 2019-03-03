@@ -10,13 +10,10 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class CenterOnVisTargetCommand extends Command {
-  public CenterOnVisTargetCommand() {
+public class FindVisionTargetCommand extends Command {
+  public FindVisionTargetCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
-
-    requires(Robot.autocenteringsub);
-
   }
 
   // Called just before this Command runs the first time
@@ -28,7 +25,7 @@ public class CenterOnVisTargetCommand extends Command {
   @Override
   protected void execute() {
 
-    Robot.autocenteringsub.CenterOnTarget();
+    Robot.autocenteringsub.FindTarget();
 
   }
 
