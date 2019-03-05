@@ -24,6 +24,7 @@ public class FindVisionTargetCommand extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    System.out.println("Finding the vision target");
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -31,7 +32,7 @@ public class FindVisionTargetCommand extends Command {
   protected void execute() {
 
     Robot.autocenteringsub.FindTarget();
-
+    
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -46,6 +47,7 @@ public class FindVisionTargetCommand extends Command {
   @Override
   protected void end() {
 
+    System.out.println("Vision Target found!");
     Robot.drivesub.DriveCommand(0, 0);
 
   }

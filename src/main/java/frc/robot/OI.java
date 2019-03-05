@@ -115,7 +115,7 @@ public Button PlaceHatchLevel_3_Button;
     ElevatorDown.whileHeld(new ElevatorDownCommand());
 
   //PID commands
-    RunPIDTarget.whenPressed(new CenterOnVisTargetCommand());
+    RunPIDTarget.whileHeld(new CenterOnVisTargetCommand());
     FindVisTarget.whenPressed(new FindVisionTargetCommand());
 
   }
