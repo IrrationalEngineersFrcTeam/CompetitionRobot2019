@@ -82,8 +82,8 @@ public Button PlaceHatchLevel_3_Button;
     PlaceHatchLevel_3_Button = new JoystickButton(StickR, 4);
 
     //Spool should be wound on the left
-    ElevatorDown = new JoystickButton(StickR, 10);
     ElevatorUp = new JoystickButton(StickR, 5);
+    ElevatorDown = new JoystickButton(StickR, 10);
 
     CenterOnLine = new JoystickButton(StickR, 11);
 
