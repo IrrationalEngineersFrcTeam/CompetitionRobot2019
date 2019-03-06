@@ -22,6 +22,7 @@ import frc.robot.commands.FindVisionTargetCommand;
 import frc.robot.commands.ElevatorDownCommand;
 import frc.robot.commands.SlideElevatorForwardCommand;
 import frc.robot.commands.SlideElevatorBackCommand;
+import frc.robot.commands.DriveOverLineCommand;
 
 
 
@@ -51,6 +52,8 @@ public Button PlaceHatchLevel_3_Button;
   public Button ElevatorUp;
   public Button ElevatorDown;
 
+//Another test button for testing the pid code that centers the robot over the line
+  public Button CenterOnLine;
 //Vision buttons
   public Button RunPIDTarget;
   public Button FindVisTarget;
@@ -86,6 +89,9 @@ public Button PlaceHatchLevel_3_Button;
   //Spool should be wound on the left
     ElevatorDown = new JoystickButton(StickR, 10);
     ElevatorUp = new JoystickButton(StickR, 5);
+    ElevatorDown = new JoystickButton(StickR, 10);
+
+    CenterOnLine = new JoystickButton(StickR, 11);
 
   //These are the PID buttons
     RunPIDTarget = new JoystickButton(StickL, 7);
@@ -114,6 +120,7 @@ public Button PlaceHatchLevel_3_Button;
     ElevatorUp.whileHeld(new ElevatorUpCommand());
     ElevatorDown.whileHeld(new ElevatorDownCommand());
 
+    CenterOnLine.whileHeld(new DriveOverLineCommand());
   //PID commands
     RunPIDTarget.whileHeld(new CenterOnVisTargetCommand());
     FindVisTarget.whenPressed(new FindVisionTargetCommand());

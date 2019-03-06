@@ -56,9 +56,10 @@ public class VisionLineCentering extends PIDSubsystem {
     
   }
 
-  public double getOutput(){
-
+  //This method is here to allow the subsystem containing the code that
+  //actually controls the motors to call the output from this subsystem
+  public double getOutput()
+  {
     return lineoutput;
-
   }
 }
