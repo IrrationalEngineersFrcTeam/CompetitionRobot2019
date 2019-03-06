@@ -30,16 +30,18 @@ public class ElevatorSubsystem extends Subsystem {
   {
 
     Robot.robotmap.MotorElevControl.set(ElevSpeed);
-
+    
   }
 
   public boolean LimitSwitchHigh()
   {
+    System.out.println("High limit switch triggered");
     return this.LimitHigh.get();
   }
 
   public boolean LimitSwitchLow()
   {
+    System.out.println("Low limit switch triggered");
     return this.LimitLow.get();
   }
 

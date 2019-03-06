@@ -33,6 +33,7 @@ public class Robot extends TimedRobot {
   public static ArmSubsystem armsub;
   public static ElevatorSliderSubsystem elevateslidesub;
   public static AutoAssistCenteringSubsystem autocenteringsub;
+  public static VisionLineCentering lineCentering;
   public static NetworkTableInstance inst;
   public static NetworkTable smartDashboardTable;
   public static NetworkTable camera1Table;
@@ -65,13 +66,14 @@ public class Robot extends TimedRobot {
   connected = smartDashboardTable.getEntry("robotConnection");
   VisionTargetDist = camera1Table.getEntry("distance");
   LineCenteringDistance = camera2Table.getEntry("yDiff");
-  VisionTargetIsSeen = camera1Table.getEntry("isSeen")
+  VisionTargetIsSeen = camera1Table.getEntry("isSeen");
   encoderL = smartDashboardTable.getEntry("encoderL");
   encoderR = smartDashboardTable.getEntry("encoderR");
   piTest = smartDashboardTable.getEntry("timeRunning");
 
   }
 
+  
   
   @Override
   public void robotPeriodic() {

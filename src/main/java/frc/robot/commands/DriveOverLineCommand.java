@@ -8,6 +8,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
 
 public class DriveOverLineCommand extends Command {
@@ -16,7 +17,6 @@ public class DriveOverLineCommand extends Command {
     // eg. requires(chassis);
 
     requires(Robot.autocenteringsub);
-    requires();
 
   }
 

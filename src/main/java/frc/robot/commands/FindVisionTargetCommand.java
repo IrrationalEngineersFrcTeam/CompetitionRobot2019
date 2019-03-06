@@ -10,8 +10,8 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class CenterOnVisTargetCommand extends Command {
-  public CenterOnVisTargetCommand() {
+public class FindVisionTargetCommand extends Command {
+  public FindVisionTargetCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
 
@@ -19,30 +19,35 @@ public class CenterOnVisTargetCommand extends Command {
 
   }
 
+  public boolean IsSeen = Robot.VisionTargetIsSeen.getBoolean(true);
+
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    System.out.println("Centering on vision target");
+    System.out.println("Finding the vision target");
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
 
-    Robot.autocenteringsub.CenterOnTarget();
-
+    Robot.autocenteringsub.FindTarget();
+    
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+
+    return this.IsSeen;
+
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
 
+    System.out.println("Vision Target found!");
     Robot.autocenteringsub.Stop();
 
   }
