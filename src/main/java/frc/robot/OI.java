@@ -53,10 +53,10 @@ public Button PlaceHatchLevel_3_Button;
   public Button ElevatorDown;
 
 //Another test button for testing the pid code that centers the robot over the line
-  public Button CenterOnLine;
 //Vision buttons
   public Button RunPIDTarget;
   public Button FindVisTarget;
+  public Button CenterOnLine;
 
 
   public OI() {
@@ -91,11 +91,12 @@ public Button PlaceHatchLevel_3_Button;
     ElevatorUp = new JoystickButton(StickR, 5);
     ElevatorDown = new JoystickButton(StickR, 10);
 
-    CenterOnLine = new JoystickButton(StickR, 11);
+    
 
   //These are the PID buttons
     RunPIDTarget = new JoystickButton(StickL, 7);
     FindVisTarget = new JoystickButton(StickL, 8);
+    CenterOnLine = new JoystickButton(StickR, 11);
 
 
   //This method binds the button to a command
@@ -120,10 +121,11 @@ public Button PlaceHatchLevel_3_Button;
     ElevatorUp.whileHeld(new ElevatorUpCommand());
     ElevatorDown.whileHeld(new ElevatorDownCommand());
 
-    CenterOnLine.whileHeld(new DriveOverLineCommand());
+
   //PID commands
     RunPIDTarget.whileHeld(new CenterOnVisTargetCommand());
     FindVisTarget.whenPressed(new FindVisionTargetCommand());
+    CenterOnLine.whileHeld(new DriveOverLineCommand());
 
   }
 
