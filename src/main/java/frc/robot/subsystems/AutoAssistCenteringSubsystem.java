@@ -59,4 +59,10 @@ public class AutoAssistCenteringSubsystem extends Subsystem
     Robot.robotmap.MotorR1Control.set(Robot.lineCentering.getOutput() * .5);
     Robot.robotmap.MotorR2Control.set(Robot.lineCentering.getOutput() * .5);
   }
+
+  public void Stop()
+  {
+    Robot.drivesub.DriveCommand(0, 0);
+  }
+
 }

@@ -43,7 +43,7 @@ public class CenterOnVisTargetCommand extends Command {
   @Override
   protected void end() {
 
-    Robot.drivesub.DriveCommand(0, 0);
+    Robot.autocenteringsub.Stop();
 
   }
 
@@ -51,5 +51,8 @@ public class CenterOnVisTargetCommand extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+
+    end();
+    
   }
 }

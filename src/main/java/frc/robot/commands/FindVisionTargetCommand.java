@@ -48,7 +48,7 @@ public class FindVisionTargetCommand extends Command {
   protected void end() {
 
     System.out.println("Vision Target found!");
-    Robot.drivesub.DriveCommand(0, 0);
+    Robot.autocenteringsub.Stop();
 
   }
 
@@ -56,5 +56,8 @@ public class FindVisionTargetCommand extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+
+    end();
+    
   }
 }
