@@ -22,7 +22,7 @@ public class VisionTargetCentering extends PIDSubsystem {
 
   public VisionTargetCentering() {
     // Insert a subsystem name and PID values here
-    super("VisionTargetCentering", 0.08, 0.0, 0.004);
+    super("VisionTargetCentering", 0.08, 0.004, 0.0);
     setInputRange(-100, 100);
     setSetpoint(0.0);
     setAbsoluteTolerance(10.0);
