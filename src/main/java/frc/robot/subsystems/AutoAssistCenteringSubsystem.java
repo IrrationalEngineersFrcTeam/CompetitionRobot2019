@@ -9,6 +9,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.Robot;
+import frc.robot.subsystems.VisionTargetCentering;
 
 
 /**
@@ -20,12 +21,37 @@ public class AutoAssistCenteringSubsystem extends Subsystem
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
+  static double Output = VisionTargetCentering.getOutput();
+  // static boolean IsSeen = Robot.VisionTargetIsSeen.getBoolean(true);
+
+  public void FindTarget()
+  {
+
+      Robot.drivesub.DriveCommand(-0.3, 0.3);
+
+  }
+
+  public void CenterOnTarget()
+  {
+
+    if(Output > 0)
+    {
+      Robot.drivesub.DriveCommand(0, 0 + Output);
+    }
+    else if(Output < 0)
+    {
+      Robot.drivesub.DriveCommand(0 + Output, 0);
+    }
+
+  }
+
   @Override
   public void initDefaultCommand() 
   {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
+
   public void DriveOverLine()
   {
     Robot.robotmap.MotorL1Control.set(-Robot.lineCentering.getOutput() * .5);

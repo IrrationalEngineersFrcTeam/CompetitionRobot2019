@@ -16,7 +16,9 @@ import frc.robot.commandGroups.PlaceHatchLevel_2;
 import frc.robot.commandGroups.PlaceHatchLevel_3;
 import frc.robot.commands.ArmExtendCommand;
 import frc.robot.commands.ArmRetractCommand;
+import frc.robot.commands.CenterOnVisTargetCommand;
 import frc.robot.commands.ElevatorUpCommand;
+import frc.robot.commands.FindVisionTargetCommand;
 import frc.robot.commands.ElevatorDownCommand;
 import frc.robot.commands.SlideElevatorForwardCommand;
 import frc.robot.commands.SlideElevatorBackCommand;
@@ -52,6 +54,9 @@ public Button PlaceHatchLevel_3_Button;
 
 //Another test button for testing the pid code that centers the robot over the line
   public Button CenterOnLine;
+//Vision buttons
+  public Button RunPIDTarget;
+  public Button FindVisTarget;
 
 
   public OI() {
@@ -74,18 +79,23 @@ public Button PlaceHatchLevel_3_Button;
     SliderBack = new JoystickButton(StickL, 16);
 
 
-    //These buttons are the buttons for the command groups, eventually we will only have these buttons
-    //instead of seperate buttons for the ArmExtend/Retract and the elevator buttons
-    //We will change the button ports later
+  //These buttons are the buttons for the command groups, eventually we will only have these buttons
+  //instead of seperate buttons for the ArmExtend/Retract and the elevator buttons
+  //We will change the button ports later
     PlaceHatchLevel_1_Button = new JoystickButton(StickR, 3);
     PlaceHatchLevel_2_Button = new JoystickButton(StickR, 2);
     PlaceHatchLevel_3_Button = new JoystickButton(StickR, 4);
 
-    //Spool should be wound on the left
+  //Spool should be wound on the left
+    ElevatorDown = new JoystickButton(StickR, 10);
     ElevatorUp = new JoystickButton(StickR, 5);
     ElevatorDown = new JoystickButton(StickR, 10);
 
     CenterOnLine = new JoystickButton(StickR, 11);
+
+  //These are the PID buttons
+    RunPIDTarget = new JoystickButton(StickL, 7);
+    FindVisTarget = new JoystickButton(StickL, 8);
 
 
   //This method binds the button to a command
@@ -111,6 +121,9 @@ public Button PlaceHatchLevel_3_Button;
     ElevatorDown.whileHeld(new ElevatorDownCommand());
 
     CenterOnLine.whileHeld(new DriveOverLineCommand());
+  //PID commands
+    RunPIDTarget.whileHeld(new CenterOnVisTargetCommand());
+    FindVisTarget.whenPressed(new FindVisionTargetCommand());
 
   }
 
