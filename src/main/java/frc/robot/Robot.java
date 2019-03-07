@@ -21,6 +21,7 @@ import frc.robot.subsystems.ElevatorSliderSubsystem;
 import frc.robot.subsystems.ElevatorSubsystem;
 import frc.robot.subsystems.HatchMechanismSubsystem;
 import frc.robot.subsystems.VisionLineCentering;
+import frc.robot.subsystems.VisionTargetCentering;
 import frc.robot.subsystems.AutoAssistCenteringSubsystem;
 
 
@@ -35,6 +36,7 @@ public class Robot extends TimedRobot {
   public static ElevatorSliderSubsystem elevateslidesub;
   public static AutoAssistCenteringSubsystem autocenteringsub;
   public static VisionLineCentering lineCentering;
+  public static VisionTargetCentering targetCentering;
   public static NetworkTableInstance inst;
   public static NetworkTable smartDashboardTable;
   public static NetworkTable camera1Table;
@@ -55,13 +57,12 @@ public class Robot extends TimedRobot {
   
   @Override
   public void robotInit() {
-  
+    targetCentering = new VisionTargetCentering();
   autocenteringsub = new AutoAssistCenteringSubsystem();
   hatchmechsub = new HatchMechanismSubsystem();
   elevatesub = new ElevatorSubsystem();
   armsub = new ArmSubsystem();
   elevateslidesub = new ElevatorSliderSubsystem();
-  oi = new OI();
   robotmap = new RobotMap();
   drivesub = new DriveSubsystem();
   inst = NetworkTableInstance.getDefault();
@@ -75,6 +76,7 @@ public class Robot extends TimedRobot {
   encoderL = smartDashboardTable.getEntry("encoderL");
   encoderR = smartDashboardTable.getEntry("encoderR");
   piTest = smartDashboardTable.getEntry("timeRunning");
+  oi = new OI();
   LimitHigh = new DigitalInput(0);
   LimitLow = new DigitalInput(1);
 

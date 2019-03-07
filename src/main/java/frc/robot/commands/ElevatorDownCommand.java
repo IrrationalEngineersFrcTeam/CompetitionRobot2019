@@ -35,8 +35,8 @@ public class ElevatorDownCommand extends Command {
   @Override
   protected boolean isFinished() {
 
-    System.out.println(Robot.elevatesub.LimitSwitchLow());
-    return Robot.elevatesub.LimitSwitchLow();
+    System.out.println(!Robot.elevatesub.LimitSwitchLow());
+    return !Robot.elevatesub.LimitSwitchLow();
     //return false;
   }
 

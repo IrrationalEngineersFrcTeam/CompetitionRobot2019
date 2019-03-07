@@ -9,7 +9,6 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.Robot;
-import frc.robot.subsystems.VisionTargetCentering;
 
 
 /**
@@ -21,7 +20,7 @@ public class AutoAssistCenteringSubsystem extends Subsystem
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  static double Output = VisionTargetCentering.getOutput();
+  double Output = Robot.targetCentering.getOutput();
   // static boolean IsSeen = Robot.VisionTargetIsSeen.getBoolean(true);
 
   public void FindTarget()
