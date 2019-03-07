@@ -82,8 +82,8 @@ public Button PlaceHatchLevel_3_Button;
   //These buttons are the buttons for the command groups, eventually we will only have these buttons
   //instead of seperate buttons for the ArmExtend/Retract and the elevator buttons
   //We will change the button ports later
-    PlaceHatchLevel_1_Button = new JoystickButton(StickR, 3);
-    PlaceHatchLevel_2_Button = new JoystickButton(StickR, 2);
+    PlaceHatchLevel_1_Button = new JoystickButton(StickR, 2);
+    PlaceHatchLevel_2_Button = new JoystickButton(StickR, 3);
     PlaceHatchLevel_3_Button = new JoystickButton(StickR, 4);
 
   //Spool should be wound on the left
