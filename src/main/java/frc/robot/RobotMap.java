@@ -12,6 +12,7 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.Servo;
 
 
 
@@ -53,6 +54,7 @@ public class RobotMap {
   public DoubleSolenoid ElevatorSlider;
   public DoubleSolenoid ClimberPiston1;
   public DoubleSolenoid ClimberPiston2;
+  public Servo ClimberServo;
 
   public RobotMap() {
     
@@ -78,14 +80,14 @@ public class RobotMap {
     ElevatorSlider = new DoubleSolenoid(4, 5);
     ClimberPiston1 = new DoubleSolenoid(6, 7);
     ClimberPiston2 = new DoubleSolenoid(8, 9);
+    ClimberServo = new Servo(0);
     
     HatchMechPiston.set(DoubleSolenoid.Value.kForward);
     ArmPiston.set(DoubleSolenoid.Value.kReverse);
     ElevatorSlider.set(DoubleSolenoid.Value.kReverse);
     ClimberPiston1.set(DoubleSolenoid.Value.kReverse);
     ClimberPiston2.set(DoubleSolenoid.Value.kReverse);
-    
-
+    ClimberServo.set(0.0);
   }
  
 }
