@@ -23,7 +23,7 @@ import frc.robot.subsystems.HatchMechanismSubsystem;
 import frc.robot.subsystems.VisionLineCentering;
 import frc.robot.subsystems.VisionTargetCentering;
 import frc.robot.subsystems.AutoAssistCenteringSubsystem;
-
+import frc.robot.subsystems.ClimberSubsystem;
 
 public class Robot extends TimedRobot {
   //This is more or less the main class, all the others are defined here!
@@ -54,6 +54,7 @@ public class Robot extends TimedRobot {
   public static boolean limitHighTriggered;
   public static boolean limitLowTriggered;
 
+  public static ClimberSubsystem climbersub;
   
   @Override
   public void robotInit() {
@@ -76,10 +77,12 @@ public class Robot extends TimedRobot {
   encoderL = smartDashboardTable.getEntry("encoderL");
   encoderR = smartDashboardTable.getEntry("encoderR");
   piTest = smartDashboardTable.getEntry("timeRunning");
+
   oi = new OI();
   LimitHigh = new DigitalInput(0);
   LimitLow = new DigitalInput(1);
 
+  climbersub = new ClimberSubsystem();
   }
 
   

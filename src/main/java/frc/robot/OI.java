@@ -50,6 +50,9 @@ public Button PlaceHatchLevel_2_Button;
 public Button PlaceHatchLevel_3_Button;
 public Button RetractAll;
 
+//This extends all three climber pistons.
+public Button ClimberPistonsExtend;
+
 //These are the manual elevator control buttons
   public Button ElevatorUp;
   public Button ElevatorDown;
@@ -80,7 +83,6 @@ public Button RetractAll;
     SliderForward = new JoystickButton(StickL, 11);
     SliderBack = new JoystickButton(StickL, 16);
 
-
   //These buttons are the buttons for the command groups, eventually we will only have these buttons
   //instead of seperate buttons for the ArmExtend/Retract and the elevator buttons
   //We will change the button ports later
@@ -88,8 +90,10 @@ public Button RetractAll;
     PlaceHatchLevel_2_Button = new JoystickButton(StickR, 3);
     PlaceHatchLevel_3_Button = new JoystickButton(StickR, 4);
     RetractAll = new JoystickButton(StickL, 4);
+    
+    ClimberPistonsExtend = new JoystickButton(StickL, 8);
 
-  //Spool should be wound on the left
+    //Spool should be wound on the left
     ElevatorDown = new JoystickButton(StickR, 10);
     ElevatorUp = new JoystickButton(StickR, 5);
     ElevatorDown = new JoystickButton(StickR, 10);
