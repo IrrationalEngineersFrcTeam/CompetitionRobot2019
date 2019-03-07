@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.HatchHoldOpenCommand;
+import frc.robot.commandGroups.ClimberCommandGroup;
 import frc.robot.commandGroups.PlaceHatchLevel_1;
 import frc.robot.commandGroups.PlaceHatchLevel_2;
 import frc.robot.commandGroups.PlaceHatchLevel_3;
@@ -24,62 +25,61 @@ import frc.robot.commands.ElevatorDownCommand;
 import frc.robot.commands.SlideElevatorForwardCommand;
 import frc.robot.commands.SlideElevatorBackCommand;
 import frc.robot.commands.DriveOverLineCommand;
-
-
+import frc.robot.commands.ClimberPistonsRetractCommand;
 
 public class OI {
-//This creates any joysticks we will use to drive the robot,
-//in this case a left joystick and a right joystick.
+  //This creates any joysticks we will use to drive the robot,
+  //in this case a left joystick and a right joystick.
   public Joystick StickL;
   public Joystick StickR;
 
-//Here we have the hatch mechanism buttons
+  //Here we have the hatch mechanism buttons
   public Button HatchHoldOpenButton;
 
-//These Arm and slider buttons are for testing and will probably be removed
+  //These Arm and slider buttons are for testing and will probably be removed
   public Button ArmExtendButton;
   public Button ArmRetractButton;
 
-//These buttons are to slide the elevator forward and back
+  //These buttons are to slide the elevator forward and back
   public Button SliderForward;
   public Button SliderBack;
 
-//These Buttons are for the command groups for lifting the hatch to specific levels
-public Button PlaceHatchLevel_1_Button;
-public Button PlaceHatchLevel_2_Button;
-public Button PlaceHatchLevel_3_Button;
-public Button RetractAll;
+  //These Buttons are for the command groups for lifting the hatch to specific levels
+  public Button PlaceHatchLevel_1_Button;
+  public Button PlaceHatchLevel_2_Button;
+  public Button PlaceHatchLevel_3_Button;
 
-//This extends all three climber pistons.
-public Button ClimberPistonsExtend;
+  //This releases the climber arms and extends all three climber pistons.
+  public Button ClimberPistonsExtend;
 
-//These are the manual elevator control buttons
+  //This retracts all three climber pistons.
+  public Button ClimberPistonsRetract;
+
+  //These are the manual elevator control buttons
   public Button ElevatorUp;
   public Button ElevatorDown;
 
-//Another test button for testing the pid code that centers the robot over the line
-//Vision buttons
+  //Another test button for testing the pid code that centers the robot over the line
+  //Vision buttons
   public Button RunPIDTarget;
   public Button FindVisTarget;
   public Button CenterOnLine;
 
-
   public OI() {
-  //This tells the robot what ports these joysticks will be connected to, 
+    //This tells the robot what ports these joysticks will be connected to, 
 
     StickL = new Joystick(0);
     StickR = new Joystick(1);
 
-  //This is where we tie the code buttons to the buttons on the joysticks
-  //In this case the hatch button
+    //This is where we tie the code buttons to the buttons on the joysticks
+    //In this case the hatch button
     HatchHoldOpenButton = new JoystickButton(StickR, 1);
-
     
-  //These buttons are for testing purposes, they will be phased out in the future
+    //These buttons are for testing purposes, they will be phased out in the future
     ArmExtendButton = new JoystickButton(StickL, 3);
     ArmRetractButton = new JoystickButton(StickL, 2);
 
-  //These are for the slider piston for the elevator
+    //These are for the slider piston for the elevator
     SliderForward = new JoystickButton(StickL, 11);
     SliderBack = new JoystickButton(StickL, 16);
 
@@ -91,51 +91,47 @@ public Button ClimberPistonsExtend;
     PlaceHatchLevel_3_Button = new JoystickButton(StickR, 4);
     RetractAll = new JoystickButton(StickL, 4);
     
-    ClimberPistonsExtend = new JoystickButton(StickL, 8);
+    ClimberPistonsExtend = new JoystickButton(StickL, 14);
+    ClimberPistonsRetract = new JoystickButton(StickR, 14);
 
     //Spool should be wound on the left
     ElevatorDown = new JoystickButton(StickR, 10);
     ElevatorUp = new JoystickButton(StickR, 5);
-    ElevatorDown = new JoystickButton(StickR, 10);
 
-    
-
-  //These are the PID buttons
+    //These are the PID buttons
     RunPIDTarget = new JoystickButton(StickL, 7);
     FindVisTarget = new JoystickButton(StickL, 8);
     CenterOnLine = new JoystickButton(StickR, 11);
 
-
-  //This method binds the button to a command
-  //In this case the hatch button
-  //I edited it so that HatchGrab is now useless
+    //This method binds the button to a command
+    //In this case the hatch button
+    //I edited it so that HatchGrab is now useless
     HatchHoldOpenButton.whileHeld(new HatchHoldOpenCommand());
 
-  //These are temporary
+    //These are temporary
     ArmExtendButton.whenPressed(new ArmExtendCommand());
     ArmRetractButton.whenPressed(new ArmRetractCommand());
 
-  //The slider command
+    //The slider command
     SliderForward.whenPressed(new SlideElevatorForwardCommand());
     SliderBack.whenPressed(new SlideElevatorBackCommand());
 
-  //The Place Hatch commands
+    //The Place Hatch commands
     PlaceHatchLevel_1_Button.whenPressed(new PlaceHatchLevel_1());
     PlaceHatchLevel_2_Button.whenPressed(new PlaceHatchLevel_2());
     PlaceHatchLevel_3_Button.whenPressed(new PlaceHatchLevel_3());
     RetractAll.whenPressed(new RetractAll());
 
-  //Elevator commands
+    ClimberPistonsExtend.whenPressed(new ClimberCommandGroup());
+    ClimberPistonsRetract.whenPressed(new ClimberPistonsRetractCommand());
+
+    //Elevator commands
     ElevatorUp.whileHeld(new ElevatorUpCommand());
     ElevatorDown.whileHeld(new ElevatorDownCommand());
 
-
-  //PID commands
+    //PID commands
     RunPIDTarget.whileHeld(new CenterOnVisTargetCommand());
     FindVisTarget.whenPressed(new FindVisionTargetCommand());
     CenterOnLine.whileHeld(new DriveOverLineCommand());
-
   }
-
-
 }
