@@ -54,10 +54,10 @@ public class RobotMap {
 
   public RobotMap() {
     
-    MotorL1 = 2;
-    MotorL2 = 3;
-    MotorR1 = 0;
-    MotorR2 = 1;
+    MotorL1 = 3;
+    MotorL2 = 4;
+    MotorR1 = 1;
+    MotorR2 = 2;
     MotorE1 = 0;
 
     MotorL1Control = new CANSparkMax(MotorL1 , MotorType.kBrushless);
