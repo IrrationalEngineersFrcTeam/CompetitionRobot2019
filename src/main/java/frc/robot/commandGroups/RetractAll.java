@@ -12,7 +12,6 @@ import frc.robot.commands.ElevatorDownCommand;
 import frc.robot.commands.SlideElevatorBackCommand;
 import frc.robot.Robot;
 import frc.robot.commands.ArmRetractCommand;
-import frc.robot.commands.SlideElevatorForwardCommand;
 
 public class RetractAll extends CommandGroup {
   /**
@@ -28,9 +27,9 @@ public class RetractAll extends CommandGroup {
     requires(Robot.armsub);
     requires(Robot.elevatesub);
 
-    addSequential(new ElevatorDownCommand(), 1.5);
+    addSequential(new ElevatorDownCommand());
     System.out.println("Elevator Going Down");
-    addSequential(new ArmRetractCommand(), 1.5);
+    addSequential(new ArmRetractCommand(), .5);
     System.out.println("Retracting Arm");
     addSequential(new SlideElevatorBackCommand());
     System.out.println("Sliding Back");
