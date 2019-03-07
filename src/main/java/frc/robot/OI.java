@@ -14,6 +14,7 @@ import frc.robot.commands.HatchHoldOpenCommand;
 import frc.robot.commandGroups.PlaceHatchLevel_1;
 import frc.robot.commandGroups.PlaceHatchLevel_2;
 import frc.robot.commandGroups.PlaceHatchLevel_3;
+import frc.robot.commandGroups.RetractAll;
 import frc.robot.commands.ArmExtendCommand;
 import frc.robot.commands.ArmRetractCommand;
 import frc.robot.commands.CenterOnVisTargetCommand;
@@ -47,6 +48,7 @@ public class OI {
 public Button PlaceHatchLevel_1_Button;
 public Button PlaceHatchLevel_2_Button;
 public Button PlaceHatchLevel_3_Button;
+public Button RetractAll;
 
 //These are the manual elevator control buttons
   public Button ElevatorUp;
@@ -85,6 +87,7 @@ public Button PlaceHatchLevel_3_Button;
     PlaceHatchLevel_1_Button = new JoystickButton(StickR, 2);
     PlaceHatchLevel_2_Button = new JoystickButton(StickR, 3);
     PlaceHatchLevel_3_Button = new JoystickButton(StickR, 4);
+    RetractAll = new JoystickButton(StickL, 4);
 
   //Spool should be wound on the left
     ElevatorDown = new JoystickButton(StickR, 10);
@@ -116,6 +119,7 @@ public Button PlaceHatchLevel_3_Button;
     PlaceHatchLevel_1_Button.whenPressed(new PlaceHatchLevel_1());
     PlaceHatchLevel_2_Button.whenPressed(new PlaceHatchLevel_2());
     PlaceHatchLevel_3_Button.whenPressed(new PlaceHatchLevel_3());
+    RetractAll.whenPressed(new RetractAll());
 
   //Elevator commands
     ElevatorUp.whileHeld(new ElevatorUpCommand());
