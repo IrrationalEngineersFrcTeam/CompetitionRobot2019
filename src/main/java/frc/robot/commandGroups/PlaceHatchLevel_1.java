@@ -27,9 +27,9 @@ public class PlaceHatchLevel_1 extends CommandGroup {
     requires(Robot.armsub);
     requires(Robot.elevatesub);
 
-    addSequential(new ElevatorDownCommand(), 1.5);
+    addSequential(new ElevatorDownCommand());
     System.out.println("Elevator Going Down");
-    addSequential(new ArmRetractCommand(), 1.5);
+    addSequential(new ArmRetractCommand(), .5);
     System.out.println("Retracting Arm");
     addSequential(new SlideElevatorForwardCommand());
     System.out.println("Sliding Forward");
