@@ -64,6 +64,7 @@ public class OI {
   public Button RunPIDTarget;
   public Button FindVisTarget;
   public Button CenterOnLine;
+  public Button RetractAll;
 
   public OI() {
     //This tells the robot what ports these joysticks will be connected to, 
