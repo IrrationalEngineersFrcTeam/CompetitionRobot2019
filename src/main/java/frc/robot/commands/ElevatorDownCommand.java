@@ -35,8 +35,9 @@ public class ElevatorDownCommand extends Command {
   @Override
   protected boolean isFinished() {
 
-    //return !Robot.elevatesub.LimitSwitchLow();
-    return false;
+    System.out.println(Robot.elevatesub.LimitSwitchLow());
+    return Robot.elevatesub.LimitSwitchLow();
+    //return false;
   }
 
   // Called once after isFinished returns true
@@ -52,6 +53,7 @@ public class ElevatorDownCommand extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    Robot.elevatesub.ElevatorSpeed(0.0);
     end();
   }
 }

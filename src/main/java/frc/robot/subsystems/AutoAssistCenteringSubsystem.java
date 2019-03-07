@@ -40,7 +40,7 @@ public class AutoAssistCenteringSubsystem extends Subsystem
     }
     else if(Output < 0)
     {
-      Robot.drivesub.DriveCommand(0 + Output, 0);
+      Robot.drivesub.DriveCommand(0 + -Output, 0);
     }
 
   }

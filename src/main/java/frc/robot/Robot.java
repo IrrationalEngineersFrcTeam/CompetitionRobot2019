@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj.DigitalInput;
 //The imports refer the robot to pre built libraries (mostly wpilib)
 // the allows us to use those libraries so it knows what we mean by"Scheduler" for instance.
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -46,6 +47,10 @@ public class Robot extends TimedRobot {
   public static NetworkTableEntry encoderR;
   public static NetworkTableEntry VisionTargetCentering;
   public static NetworkTableEntry VisionTargetIsSeen;
+  public static DigitalInput LimitHigh;
+  public static DigitalInput LimitLow;
+  public static boolean limitHighTriggered;
+  public static boolean limitLowTriggered;
 
   
   @Override
@@ -70,6 +75,8 @@ public class Robot extends TimedRobot {
   encoderL = smartDashboardTable.getEntry("encoderL");
   encoderR = smartDashboardTable.getEntry("encoderR");
   piTest = smartDashboardTable.getEntry("timeRunning");
+  LimitHigh = new DigitalInput(0);
+  LimitLow = new DigitalInput(1);
 
   }
 
@@ -83,6 +90,9 @@ public class Robot extends TimedRobot {
     //piTest.setDouble(distance.getDouble(0));
     //encoderL.setDouble(leftspeed);
     //encoderR.setDouble(rightspeed);
+
+    limitLowTriggered = LimitLow.get();
+    limitHighTriggered = LimitHigh.get();
 
   }
 
