@@ -9,7 +9,10 @@ package frc.robot.commandGroups;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.Robot;
-import frc.robot.commands.ReleaseClimberArmsCommand;
+import frc.robot.commands.ClimberReleaseArmsCommand;
+import frc.robot.commands.ElevatorUpCommand;
+import frc.robot.commands.SlideElevatorBackCommand;
+import frc.robot.commands.SlideElevatorForwardCommand;
 import frc.robot.commands.ClimberPistonsExtendCommand;
 
 public class ClimbUpCommand extends CommandGroup {
@@ -24,11 +27,13 @@ public class ClimbUpCommand extends CommandGroup {
 
     requires(Robot.climbersub);
 
-
+    addSequential(new ElevatorUpCommand());
+    addSequential(new SlideElevatorForwardCommand(), 0.5);
     System.out.println("Releasing climber arms");
-    addSequential(new ReleaseClimberArmsCommand(), 0.5);
+    addSequential(new ReleaseClimberArmsCommand(), 1);
     System.out.println("Extending climber pistons");
-    addSequential(new ClimberPistonsExtendCommand());
+    addSequential(new ClimberPistonsExtendCommand(), 0.5);
+    addSequential(new SlideElevatorBackCommand(), 0.5);
 
     // To run multiple commands at the same time,
     // use addParallel()
