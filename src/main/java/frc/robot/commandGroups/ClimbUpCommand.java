@@ -12,11 +12,11 @@ import frc.robot.Robot;
 import frc.robot.commands.ReleaseClimberArmsCommand;
 import frc.robot.commands.ClimberPistonsExtendCommand;
 
-public class ClimberCommandGroup extends CommandGroup {
+public class ClimbUpCommand extends CommandGroup {
   /**
    * Add your docs here.
    */
-  public ClimberCommandGroup() {
+  public ClimbUpCommand() {
     // Add Commands here:
     // e.g. addSequential(new Command1());
     //      addSequential(new Command2());

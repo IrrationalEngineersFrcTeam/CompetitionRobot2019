@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.HatchHoldOpenCommand;
-import frc.robot.commandGroups.ClimberCommandGroup;
+import frc.robot.commandGroups.ClimbUpCommand;
 import frc.robot.commandGroups.PlaceHatchLevel_1;
 import frc.robot.commandGroups.PlaceHatchLevel_2;
 import frc.robot.commandGroups.PlaceHatchLevel_3;
@@ -123,7 +123,7 @@ public class OI {
     PlaceHatchLevel_3_Button.whenPressed(new PlaceHatchLevel_3());
     RetractAllHatchElements.whenPressed(new RetractAllHatchElements());
 
-    ClimberPistonsExtend.whenPressed(new ClimberCommandGroup());
+    ClimberPistonsExtend.whenPressed(new ClimbUpCommand());
     ClimberPistonsRetract.whenPressed(new ClimberPistonsRetractCommand());
 
     //Elevator commands
