@@ -15,7 +15,7 @@ import frc.robot.commandGroups.ClimberCommandGroup;
 import frc.robot.commandGroups.PlaceHatchLevel_1;
 import frc.robot.commandGroups.PlaceHatchLevel_2;
 import frc.robot.commandGroups.PlaceHatchLevel_3;
-import frc.robot.commandGroups.RetractAll;
+import frc.robot.commandGroups.RetractAllHatchElements;
 import frc.robot.commands.ArmExtendCommand;
 import frc.robot.commands.ArmRetractCommand;
 import frc.robot.commands.CenterOnVisTargetCommand;
@@ -48,11 +48,11 @@ public class OI {
   public Button PlaceHatchLevel_1_Button;
   public Button PlaceHatchLevel_2_Button;
   public Button PlaceHatchLevel_3_Button;
-
+  public Button RetractAllHatchElements;
+  
   //This releases the climber arms and extends all three climber pistons.
-  public Button ClimberPistonsExtend;
-
   //This retracts all three climber pistons.
+  public Button ClimberPistonsExtend;
   public Button ClimberPistonsRetract;
 
   //These are the manual elevator control buttons
@@ -84,9 +84,9 @@ public class OI {
     SliderForward = new JoystickButton(StickL, 11);
     SliderBack = new JoystickButton(StickL, 16);
 
-  //These buttons are the buttons for the command groups, eventually we will only have these buttons
-  //instead of seperate buttons for the ArmExtend/Retract and the elevator buttons
-  //We will change the button ports later
+  	//These buttons are the buttons for the command groups, eventually we will only have these buttons
+  	//instead of seperate buttons for the ArmExtend/Retract and the elevator buttons
+  	//We will change the button ports later
     PlaceHatchLevel_1_Button = new JoystickButton(StickR, 2);
     PlaceHatchLevel_2_Button = new JoystickButton(StickR, 3);
     PlaceHatchLevel_3_Button = new JoystickButton(StickR, 4);
@@ -121,7 +121,7 @@ public class OI {
     PlaceHatchLevel_1_Button.whenPressed(new PlaceHatchLevel_1());
     PlaceHatchLevel_2_Button.whenPressed(new PlaceHatchLevel_2());
     PlaceHatchLevel_3_Button.whenPressed(new PlaceHatchLevel_3());
-    RetractAll.whenPressed(new RetractAll());
+    RetractAllHatchElements.whenPressed(new RetractAllHatchElements());
 
     ClimberPistonsExtend.whenPressed(new ClimberCommandGroup());
     ClimberPistonsRetract.whenPressed(new ClimberPistonsRetractCommand());

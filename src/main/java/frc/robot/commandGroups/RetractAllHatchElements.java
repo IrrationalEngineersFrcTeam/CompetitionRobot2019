@@ -13,11 +13,11 @@ import frc.robot.commands.SlideElevatorBackCommand;
 import frc.robot.Robot;
 import frc.robot.commands.ArmRetractCommand;
 
-public class RetractAll extends CommandGroup {
+public class RetractAllHatchElements extends CommandGroup {
   /**
    * Add your docs here.
    */
-  public RetractAll() {
+  public RetractAllHatchElements() {
     // Add Commands here:
     // e.g. addSequential(new Command1());
     //      addSequential(new Command2());
