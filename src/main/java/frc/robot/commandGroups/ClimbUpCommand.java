@@ -9,7 +9,7 @@ package frc.robot.commandGroups;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.Robot;
-import frc.robot.commands.ClimberReleaseArmsCommand;
+import frc.robot.commands.ReleaseClimberArmsCommand;
 import frc.robot.commands.ElevatorUpCommand;
 import frc.robot.commands.SlideElevatorBackCommand;
 import frc.robot.commands.SlideElevatorForwardCommand;
