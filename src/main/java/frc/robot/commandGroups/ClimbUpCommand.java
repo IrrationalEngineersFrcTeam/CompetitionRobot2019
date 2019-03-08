@@ -9,7 +9,7 @@ package frc.robot.commandGroups;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import frc.robot.Robot;
-import frc.robot.commands.ClimberReleaseArmsCommand;
+import frc.robot.commands.ReleaseClimberArmsCommand;
 import frc.robot.commands.ClimberPistonsExtendCommand;
 
 public class ClimberCommandGroup extends CommandGroup {
@@ -24,8 +24,9 @@ public class ClimberCommandGroup extends CommandGroup {
 
     requires(Robot.climbersub);
 
+
     System.out.println("Releasing climber arms");
-    addSequential(new ClimberReleaseArmsCommand(), 0.5);
+    addSequential(new ReleaseClimberArmsCommand(), 0.5);
     System.out.println("Extending climber pistons");
     addSequential(new ClimberPistonsExtendCommand());
 

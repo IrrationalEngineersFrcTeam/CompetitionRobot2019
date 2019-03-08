@@ -11,9 +11,9 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class ClimberReleaseArmsCommand extends Command {
+public class ReleaseClimberArmsCommand extends Command {
 
-  public ClimberReleaseArmsCommand() {
+  public ReleaseClimberArmsCommand() {
     requires(Robot.climbersub);
   }
 
