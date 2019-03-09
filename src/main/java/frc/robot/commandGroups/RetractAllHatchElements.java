@@ -31,7 +31,7 @@ public class RetractAllHatchElements extends CommandGroup {
     System.out.println("Elevator Going Down");
     addSequential(new ArmRetractCommand(), .5);
     System.out.println("Retracting Arm");
-    addSequential(new SlideElevatorBackCommand());
+    addSequential(new SlideElevatorBackCommand(), .5);
     System.out.println("Sliding Back");
 
     // To run multiple commands at the same time,
