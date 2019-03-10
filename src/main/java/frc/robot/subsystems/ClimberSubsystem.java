@@ -36,6 +36,11 @@ public class ClimberSubsystem extends Subsystem {
   }
 
   public void ReleaseClimberArms(){
-    Robot.robotmap.ClimberServo.set(0.5);
+    Robot.robotmap.ClimberServo.set(90);
   }
+
+  public void ResetServo() {
+    Robot.robotmap.ClimberServo.set(0);
+  }
+
 }

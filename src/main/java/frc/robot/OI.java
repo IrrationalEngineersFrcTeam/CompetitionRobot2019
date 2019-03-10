@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.HatchHoldOpenCommand;
+import frc.robot.commands.ReleaseClimberArmsCommand;
 import frc.robot.commandGroups.ClimbUpCommand;
 import frc.robot.commandGroups.PlaceHatchLevel_1;
 import frc.robot.commandGroups.PlaceHatchLevel_2;
@@ -66,6 +67,8 @@ public class OI {
   public Button CenterOnLine;
   public Button RetractAll;
 
+  public Button releaseClimberArms;
+
   public OI() {
     //This tells the robot what ports these joysticks will be connected to, 
 
@@ -104,6 +107,8 @@ public class OI {
     FindVisTarget = new JoystickButton(StickL, 8);
     CenterOnLine = new JoystickButton(StickR, 11);
 
+    releaseClimberArms = new JoystickButton(StickL, 6);
+
     //This method binds the button to a command
     //In this case the hatch button
     //I edited it so that HatchGrab is now useless
@@ -121,7 +126,7 @@ public class OI {
     PlaceHatchLevel_1_Button.whenPressed(new PlaceHatchLevel_1());
     PlaceHatchLevel_2_Button.whenPressed(new PlaceHatchLevel_2());
     PlaceHatchLevel_3_Button.whenPressed(new PlaceHatchLevel_3());
-    RetractAllHatchElements.whenPressed(new RetractAllHatchElements());
+    RetractAll.whenPressed(new RetractAllHatchElements());
 
     ClimberPistonsExtend.whenPressed(new ClimbUpCommand());
     ClimberPistonsRetract.whenPressed(new ClimberPistonsRetractCommand());
@@ -134,5 +139,7 @@ public class OI {
     RunPIDTarget.whileHeld(new CenterOnVisTargetCommand());
     FindVisTarget.whenPressed(new FindVisionTargetCommand());
     CenterOnLine.whileHeld(new DriveOverLineCommand());
+
+    releaseClimberArms.whileHeld(new ReleaseClimberArmsCommand());
   }
 }

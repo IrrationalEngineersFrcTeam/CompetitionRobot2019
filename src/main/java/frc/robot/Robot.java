@@ -7,10 +7,13 @@
 
 package frc.robot;
 
+import com.kauailabs.navx.frc.AHRS;
+
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.SerialPort;
 //The imports refer the robot to pre built libraries (mostly wpilib)
 // the allows us to use those libraries so it knows what we mean by"Scheduler" for instance.
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -51,16 +54,20 @@ public class Robot extends TimedRobot {
   public static NetworkTableEntry encoderR;
   public static NetworkTableEntry VisionTargetCentering;
   public static NetworkTableEntry VisionTargetIsSeen;
+  public static NetworkTableEntry NavXYaw;
   public static DigitalInput LimitHigh;
   public static DigitalInput LimitLow;
   public static boolean limitHighTriggered;
   public static boolean limitLowTriggered;
+  public static double navXAngle;
+  public static AHRS navx;
 
   public static ClimberSubsystem climbersub;
   
   @Override
   public void robotInit() {
-    targetCentering = new VisionTargetCentering();
+  navx = new AHRS(SerialPort.Port.kMXP); 
+  targetCentering = new VisionTargetCentering();
   autocenteringsub = new AutoAssistCenteringSubsystem();
   hatchmechsub = new HatchMechanismSubsystem();
   elevatesub = new ElevatorSubsystem();
@@ -80,12 +87,12 @@ public class Robot extends TimedRobot {
   encoderL = smartDashboardTable.getEntry("encoderL");
   encoderR = smartDashboardTable.getEntry("encoderR");
   piTest = smartDashboardTable.getEntry("timeRunning");
-
-  oi = new OI();
+  NavXYaw = smartDashboardTable.getEntry("NavXYaw");
   LimitHigh = new DigitalInput(0);
   LimitLow = new DigitalInput(1);
-
   climbersub = new ClimberSubsystem();
+  oi = new OI();
+
   }
 
   
@@ -101,6 +108,7 @@ public class Robot extends TimedRobot {
 
     limitLowTriggered = LimitLow.get();
     limitHighTriggered = LimitHigh.get();
+    navXAngle = NavXYaw.getDouble((double)navx.getYaw());
 
   }
 

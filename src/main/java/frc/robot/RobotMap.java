@@ -83,7 +83,7 @@ public class RobotMap {
     ArmPiston = new DoubleSolenoid(2, 3);
     ElevatorSlider = new DoubleSolenoid(4, 5);
     ClimberPiston1 = new DoubleSolenoid(6, 7);
-    ClimberPiston2 = new DoubleSolenoid(8, 9);
+    ClimberPiston2 = ClimberPiston1;
     ClimberServo = new Servo(1);
     
     HatchMechPiston.set(DoubleSolenoid.Value.kForward);

@@ -19,11 +19,14 @@ public class ReleaseClimberArmsCommand extends Command {
 
   @Override
   protected void initialize() {
+    Robot.climbersub.ReleaseClimberArms();
+    System.out.println("Releasing Arms");
+
   }
 
   @Override
   protected void execute() {
-    Robot.climbersub.ReleaseClimberArms();
+    //Robot.climbersub.ReleaseClimberArms();
   }
 
   @Override
@@ -33,9 +36,11 @@ public class ReleaseClimberArmsCommand extends Command {
 
   @Override
   protected void end() {
+    Robot.climbersub.ResetServo();
   }
 
   @Override
   protected void interrupted() {
+    end();
   }
 }

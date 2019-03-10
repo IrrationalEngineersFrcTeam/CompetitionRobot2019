@@ -26,6 +26,8 @@ public class ClimbUpCommand extends CommandGroup {
     // these will run in order.
 
     requires(Robot.climbersub);
+    requires(Robot.elevateslidesub);
+    requires(Robot.elevatesub);
 
     addSequential(new ElevatorUpCommand());
     addSequential(new SlideElevatorForwardCommand(), 0.5);
