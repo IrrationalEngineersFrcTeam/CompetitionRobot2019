@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import java.awt.SystemTray;
+
 import com.kauailabs.navx.frc.AHRS;
 
 import edu.wpi.first.networktables.NetworkTable;
@@ -108,7 +110,9 @@ public class Robot extends TimedRobot {
 
     limitLowTriggered = LimitLow.get();
     limitHighTriggered = LimitHigh.get();
-    navXAngle = NavXYaw.getDouble((double)navx.getYaw());
+    navXAngle = (double)navx.getYaw();
+    NavXYaw.setDouble(navXAngle);
+    //System.out.println(navXAngle);
 
   }
 
