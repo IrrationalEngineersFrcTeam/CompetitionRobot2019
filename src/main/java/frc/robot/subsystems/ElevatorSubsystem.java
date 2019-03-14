@@ -42,12 +42,12 @@ public class ElevatorSubsystem extends Subsystem {
   }
 
   public void ElevatorUp() {
-    Robot.robotmap.MotorElevControl.set(0.75);
+    Robot.robotmap.MotorElevControl.set(1);
     System.out.println("Going UP!");
   }
 
   public void ElevatorDown() {
-    Robot.robotmap.MotorElevControl.set(-0.75);
+    Robot.robotmap.MotorElevControl.set(-1);
     System.out.println("Going DOWN!");
   }
 

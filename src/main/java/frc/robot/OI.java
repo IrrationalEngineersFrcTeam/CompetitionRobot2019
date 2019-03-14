@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.HatchHoldOpenCommand;
-import frc.robot.commands.ReleaseClimberArmsCommand;
+//import frc.robot.commands.ReleaseClimberArmsCommand;
 import frc.robot.commandGroups.ClimbUpCommand;
 import frc.robot.commandGroups.PlaceHatchLevel_1;
 import frc.robot.commandGroups.PlaceHatchLevel_2;
@@ -19,6 +19,8 @@ import frc.robot.commandGroups.PlaceHatchLevel_3;
 import frc.robot.commandGroups.RetractAllHatchElements;
 import frc.robot.commands.ArmExtendCommand;
 import frc.robot.commands.ArmRetractCommand;
+import frc.robot.commands.CargoInCommand;
+import frc.robot.commands.CargoOutCommand;
 import frc.robot.commands.CenterOnVisTargetCommand;
 import frc.robot.commands.ElevatorUpCommand;
 import frc.robot.commands.FindVisionTargetCommand;
@@ -68,7 +70,12 @@ public class OI {
   public Button CenterOnLine;
   public Button RetractAll;
 
-  public Button releaseClimberArms;
+  //This button will go unused because I am to lazy to delete the entire subsystem/everything
+  //public Button releaseClimberArms;
+
+  //Cargo button
+  public Button CargoIn;
+  public Button CargoOut;
 
   public Button climbModeButton;
   public OI() {
@@ -110,7 +117,11 @@ public class OI {
     FindVisTarget = new JoystickButton(StickL, 8);
     CenterOnLine = new JoystickButton(StickR, 11);
 
-    releaseClimberArms = new JoystickButton(StickL, 6);
+    //cargo commands
+    CargoIn = new JoystickButton(StickL, 5);
+    CargoOut = new JoystickButton(StickL, 6);
+
+    //releaseClimberArms = new JoystickButton(StickL, 6);
 
     //This method binds the button to a command
     //In this case the hatch button
@@ -144,6 +155,10 @@ public class OI {
     FindVisTarget.whenPressed(new FindVisionTargetCommand());
     CenterOnLine.whileHeld(new DriveOverLineCommand());
 
-    releaseClimberArms.whileHeld(new ReleaseClimberArmsCommand());
+    //Cargo Commands
+    CargoIn.whileHeld(new CargoInCommand());
+    CargoOut.whileHeld(new CargoOutCommand());
+
+    //releaseClimberArms.whileHeld(new ReleaseClimberArmsCommand());
   }
 }

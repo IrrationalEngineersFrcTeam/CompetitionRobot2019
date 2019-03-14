@@ -25,18 +25,18 @@ public class CargoSubsystem extends Subsystem {
 
   public void cargoIn() {
 
-    Robot.robotmap.cargoControl.set(0.5);
+    Robot.robotmap.CargoControl.set(0.5);
 
   }
 
   public void cargoOut() {
 
-    Robot.robotmap.cargoControl.set(-0.5);
+    Robot.robotmap.CargoControl.set(-0.5);
 
   }
 
   public void stop() {
-    Robot.robotmap.cargoControl.set(0);
+    Robot.robotmap.CargoControl.set(0);
   }
 
 }
