@@ -27,6 +27,7 @@ import frc.robot.commands.SlideElevatorForwardCommand;
 import frc.robot.commands.SlideElevatorBackCommand;
 import frc.robot.commands.DriveOverLineCommand;
 import frc.robot.commands.ClimberPistonsRetractCommand;
+import frc.robot.commands.ClimbModeCommand;
 
 public class OI {
   //This creates any joysticks we will use to drive the robot,
@@ -69,6 +70,7 @@ public class OI {
 
   public Button releaseClimberArms;
 
+  public Button climbModeButton;
   public OI() {
     //This tells the robot what ports these joysticks will be connected to, 
 
@@ -78,6 +80,7 @@ public class OI {
     //This is where we tie the code buttons to the buttons on the joysticks
     //In this case the hatch button
     HatchHoldOpenButton = new JoystickButton(StickR, 1);
+    climbModeButton = new JoystickButton(StickL, 1);
     
     //These buttons are for testing purposes, they will be phased out in the future
     ArmExtendButton = new JoystickButton(StickL, 3);
@@ -130,6 +133,7 @@ public class OI {
 
     ClimberPistonsExtend.whenPressed(new ClimbUpCommand());
     ClimberPistonsRetract.whenPressed(new ClimberPistonsRetractCommand());
+    climbModeButton.whenPressed(new ClimbModeCommand());
 
     //Elevator commands
     ElevatorUp.whileHeld(new ElevatorUpCommand());

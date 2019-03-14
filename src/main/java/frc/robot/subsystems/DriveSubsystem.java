@@ -23,13 +23,16 @@ public class DriveSubsystem extends Subsystem {
 
    
   }
-  public void DriveCommand(double SpeedL, double SpeedR){
+  public void DriveCommand(double SpeedL, double SpeedR, double constant){
     //This is the code that actually makes the robot drive! It tells the 
     //proper motor controllers to set the motors to desired speed.
-    Robot.robotmap.MotorL1Control.set(-SpeedL * .65);
-		Robot.robotmap.MotorL2Control.set(-SpeedL * .65);
-		Robot.robotmap.MotorR1Control.set(SpeedR * .65);
-    Robot.robotmap.MotorR2Control.set(SpeedR * .65);
+    if(Robot.climbMode = true)
+      constant = .75;
+      
+    Robot.robotmap.MotorL1Control.set(-SpeedL * constant);
+		Robot.robotmap.MotorL2Control.set(-SpeedL * constant);
+		Robot.robotmap.MotorR1Control.set(SpeedR * constant);
+    Robot.robotmap.MotorR2Control.set(SpeedR * constant);
 
     //System.out.println(Robot.robotmap.encoderL1.getVelocity());
 

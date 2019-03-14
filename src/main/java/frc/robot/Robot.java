@@ -23,6 +23,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ElevatorSliderSubsystem;
+import frc.robot.subsystems.ClimbModeSubsystem;
 import frc.robot.subsystems.ElevatorSubsystem;
 import frc.robot.subsystems.HatchMechanismSubsystem;
 import frc.robot.subsystems.VisionLineCentering;
@@ -38,6 +39,7 @@ public class Robot extends TimedRobot {
   public static DriveSubsystem drivesub;
   public static HatchMechanismSubsystem hatchmechsub;
   public static ElevatorSubsystem elevatesub;
+  public static ClimbModeSubsystem climbmodesub;
   public static ArmSubsystem armsub;
   public static ElevatorSliderSubsystem elevateslidesub;
   public static AutoAssistCenteringSubsystem autocenteringsub;
@@ -61,6 +63,7 @@ public class Robot extends TimedRobot {
   public static DigitalInput LimitLow;
   public static boolean limitHighTriggered;
   public static boolean limitLowTriggered;
+  public static boolean climbMode; 
   public static double navXAngle;
   public static AHRS navx;
 
@@ -68,11 +71,13 @@ public class Robot extends TimedRobot {
   
   @Override
   public void robotInit() {
+  climbMode = false;
   navx = new AHRS(SerialPort.Port.kMXP); 
   targetCentering = new VisionTargetCentering();
   autocenteringsub = new AutoAssistCenteringSubsystem();
   hatchmechsub = new HatchMechanismSubsystem();
   elevatesub = new ElevatorSubsystem();
+  climbmodesub = new ClimbModeSubsystem();
   armsub = new ArmSubsystem();
   elevateslidesub = new ElevatorSliderSubsystem();
   cargoSub = new CargoSubsystem();
