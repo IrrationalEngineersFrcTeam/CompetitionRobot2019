@@ -133,7 +133,7 @@ public class OI {
 
     ClimberPistonsExtend.whenPressed(new ClimbUpCommand());
     ClimberPistonsRetract.whenPressed(new ClimberPistonsRetractCommand());
-    climbModeButton.whenPressed(new ClimbModeCommand());
+    climbModeButton.whileHeld(new ClimbModeCommand());
 
     //Elevator commands
     ElevatorUp.whileHeld(new ElevatorUpCommand());

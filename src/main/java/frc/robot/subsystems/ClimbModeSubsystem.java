@@ -28,4 +28,7 @@ public class ClimbModeSubsystem extends Subsystem {
     
 
   }
+  public void unBoost(){
+    Robot.climbMode = false;
+  }
 }

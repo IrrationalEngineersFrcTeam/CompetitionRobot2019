@@ -34,7 +34,7 @@ public class DriveCommand extends Command {
     double SpeedL = Robot.oi.StickL.getY();
     double SpeedR = Robot.oi.StickR.getY();
     //System.out.println("Left: " + SpeedL + ", Right: " + SpeedR);
-    Robot.drivesub.DriveCommand(SpeedL, SpeedR);
+    Robot.drivesub.DriveCommand(SpeedL, SpeedR, .65);
 
   }
 
