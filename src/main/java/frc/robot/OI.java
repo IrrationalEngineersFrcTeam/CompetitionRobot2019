@@ -78,6 +78,10 @@ public class OI {
   public Button CargoOut;
 
   public Button climbModeButton;
+
+  //Arcade drive button
+  public Button ArcadeMode;
+
   public OI() {
     //This tells the robot what ports these joysticks will be connected to, 
 
@@ -120,6 +124,9 @@ public class OI {
     //cargo commands
     CargoIn = new JoystickButton(StickL, 5);
     CargoOut = new JoystickButton(StickL, 6);
+
+    //Arcade drive Button
+    ArcadeMode = new JoystickButton(StickR, 6);
 
     //releaseClimberArms = new JoystickButton(StickL, 6);
 

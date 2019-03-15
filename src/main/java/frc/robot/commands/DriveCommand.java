@@ -33,8 +33,18 @@ public class DriveCommand extends Command {
     //These will be usefull to the drive subsystem 
     double SpeedL = Robot.oi.StickL.getY();
     double SpeedR = Robot.oi.StickR.getY();
+    double SpeedLX = Robot.oi.StickL.getX();
+
+    boolean ArcadeModeOn = Robot.oi.ArcadeMode.get();
     //System.out.println("Left: " + SpeedL + ", Right: " + SpeedR);
-    Robot.drivesub.DriveCommand(SpeedL, SpeedR, .65);
+    if(ArcadeModeOn == false)
+    {
+    Robot.drivesub.TankDrive(SpeedL, SpeedR, .65);
+    }
+    else
+    {
+    Robot.drivesub.ArcadeDrive(SpeedL, SpeedLX);
+    }
 
   }
 

@@ -23,10 +23,10 @@ public class ClimbModeSubsystem extends Subsystem {
   }
 
   public void Boost(){
+    
     Robot.elevateslidesub.ElevSlideBack();
     Robot.climbMode = true;
     
-
   }
   public void unBoost(){
     Robot.climbMode = false;
