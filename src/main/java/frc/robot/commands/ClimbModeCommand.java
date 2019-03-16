@@ -11,6 +11,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class ClimbModeCommand extends Command {
+
+  static boolean climbModeBool = Robot.oi.climbModeButton.get();
+  public static double DriveConstant;
+
   public ClimbModeCommand() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -28,14 +32,21 @@ public class ClimbModeCommand extends Command {
   protected void execute() 
   {
 
-  Robot.climbmodesub.Boost();
+    if(climbModeBool == true)
+    {
+    DriveConstant = Robot.climbmodesub.Boost();
+    }
+    else
+    {
+    DriveConstant = Robot.climbmodesub.unBoost();
+    }
 
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return climbModeBool;
   }
 
   // Called once after isFinished returns true

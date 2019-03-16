@@ -63,7 +63,6 @@ public class Robot extends TimedRobot {
   public static DigitalInput LimitLow;
   public static boolean limitHighTriggered;
   public static boolean limitLowTriggered;
-  public static boolean climbMode; 
   public static double navXAngle;
   public static AHRS navx;
 
@@ -71,7 +70,6 @@ public class Robot extends TimedRobot {
   
   @Override
   public void robotInit() {
-  climbMode = false;
   navx = new AHRS(SerialPort.Port.kMXP); 
   targetCentering = new VisionTargetCentering();
   autocenteringsub = new AutoAssistCenteringSubsystem();

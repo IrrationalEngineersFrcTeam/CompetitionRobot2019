@@ -22,13 +22,17 @@ public class ClimbModeSubsystem extends Subsystem {
     // setDefaultCommand(new MySpecialCommand());
   }
 
-  public void Boost(){
+  public double Boost()
+  {
     
     Robot.elevateslidesub.ElevSlideBack();
-    Robot.climbMode = true;
+    return 0.75;
     
   }
-  public void unBoost(){
-    Robot.climbMode = false;
+  public double unBoost()
+  {
+
+    return 0.65;
+
   }
 }

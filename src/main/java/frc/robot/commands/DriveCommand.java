@@ -31,19 +31,20 @@ public class DriveCommand extends Command {
   protected void execute() {
     //This creates two variables that are equal to the angle of joysticks
     //These will be usefull to the drive subsystem 
-    double SpeedL = Robot.oi.StickL.getY();
+    double SpeedLY = Robot.oi.StickL.getY();
     double SpeedR = Robot.oi.StickR.getY();
     double SpeedLX = Robot.oi.StickL.getX();
+    double constant = ClimbModeCommand.DriveConstant;
 
     boolean ArcadeModeOn = Robot.oi.ArcadeMode.get();
     //System.out.println("Left: " + SpeedL + ", Right: " + SpeedR);
     if(ArcadeModeOn == false)
     {
-    Robot.drivesub.TankDrive(SpeedL, SpeedR, .65);
+    Robot.drivesub.TankDrive(SpeedLY, SpeedR, constant);
     }
     else
     {
-    Robot.drivesub.ArcadeDrive(SpeedL, SpeedLX);
+    Robot.drivesub.ArcadeDrive(SpeedLY, SpeedLX);
     }
 
   }
