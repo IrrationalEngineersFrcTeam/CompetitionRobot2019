@@ -30,7 +30,6 @@ import frc.robot.subsystems.VisionLineCentering;
 import frc.robot.subsystems.VisionTargetCentering;
 import frc.robot.subsystems.AutoAssistCenteringSubsystem;
 import frc.robot.subsystems.CargoSubsystem;
-import frc.robot.subsystems.ClimberSubsystem;
 
 public class Robot extends TimedRobot {
   //This is more or less the main class, all the others are defined here!
@@ -66,7 +65,6 @@ public class Robot extends TimedRobot {
   public static double navXAngle;
   public static AHRS navx;
 
-  public static ClimberSubsystem climbersub;
   
   @Override
   public void robotInit() {
@@ -95,7 +93,6 @@ public class Robot extends TimedRobot {
   NavXYaw = smartDashboardTable.getEntry("NavXYaw");
   LimitHigh = new DigitalInput(0);
   LimitLow = new DigitalInput(1);
-  climbersub = new ClimberSubsystem();
   oi = new OI();
 
   }

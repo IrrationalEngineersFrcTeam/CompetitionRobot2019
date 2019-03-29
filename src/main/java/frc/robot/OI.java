@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.HatchHoldOpenCommand;
 //import frc.robot.commands.ReleaseClimberArmsCommand;
-import frc.robot.commandGroups.ClimbUpCommand;
 import frc.robot.commandGroups.PlaceHatchLevel_1;
 import frc.robot.commandGroups.PlaceHatchLevel_2;
 import frc.robot.commandGroups.PlaceHatchLevel_3;
@@ -28,7 +27,6 @@ import frc.robot.commands.ElevatorDownCommand;
 import frc.robot.commands.SlideElevatorForwardCommand;
 import frc.robot.commands.SlideElevatorBackCommand;
 import frc.robot.commands.DriveOverLineCommand;
-import frc.robot.commands.ClimberPistonsRetractCommand;
 import frc.robot.commands.ClimbModeCommand;
 
 public class OI {
@@ -53,11 +51,6 @@ public class OI {
   public Button PlaceHatchLevel_2_Button;
   public Button PlaceHatchLevel_3_Button;
   public Button RetractAllHatchElements;
-  
-  //This releases the climber arms and extends all three climber pistons.
-  //This retracts all three climber pistons.
-  public Button ClimberPistonsExtend;
-  public Button ClimberPistonsRetract;
 
   //These are the manual elevator control buttons
   public Button ElevatorUp;
@@ -108,9 +101,6 @@ public class OI {
     PlaceHatchLevel_2_Button = new JoystickButton(StickR, 3);
     PlaceHatchLevel_3_Button = new JoystickButton(StickR, 4);
     RetractAll = new JoystickButton(StickL, 4);
-    
-    ClimberPistonsExtend = new JoystickButton(StickL, 14);
-    ClimberPistonsRetract = new JoystickButton(StickR, 14);
 
     //Spool should be wound on the left
     ElevatorDown = new JoystickButton(StickR, 10);
@@ -149,8 +139,6 @@ public class OI {
     PlaceHatchLevel_3_Button.whenPressed(new PlaceHatchLevel_3());
     RetractAll.whenPressed(new RetractAllHatchElements());
 
-    ClimberPistonsExtend.whenPressed(new ClimbUpCommand());
-    ClimberPistonsRetract.whenPressed(new ClimberPistonsRetractCommand());
     climbModeButton.whileHeld(new ClimbModeCommand());
 
     //Elevator commands
