@@ -65,7 +65,8 @@ public class Robot extends TimedRobot {
   public static double navXAngle;
   public static AHRS navx;
 
-  
+  public static double PIDTurn;
+
   @Override
   public void robotInit() {
   navx = new AHRS(SerialPort.Port.kMXP); 
@@ -112,6 +113,7 @@ public class Robot extends TimedRobot {
     limitHighTriggered = LimitHigh.get();
     navXAngle = (double)navx.getYaw();
     NavXYaw.setDouble(navXAngle);
+    PIDTurn = VisionTargetDist.getDouble(0);
     //System.out.println(navXAngle);
 
   }

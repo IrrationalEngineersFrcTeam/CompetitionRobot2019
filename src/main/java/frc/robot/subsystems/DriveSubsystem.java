@@ -23,19 +23,16 @@ public class DriveSubsystem extends Subsystem {
 
    
   }
-  public void TankDrive(double SpeedL, double SpeedR, double constant){
+  public void TankDrive(double SpeedL, double SpeedR){
     //This is the code that actually makes the robot drive! It tells the 
     //proper motor controllers to set the motors to desired speed.
       
-    Robot.robotmap.MotorL1Control.set(-SpeedL * constant);
-		Robot.robotmap.MotorL2Control.set(-SpeedL * constant);
-		Robot.robotmap.MotorR1Control.set(SpeedR * constant);
-    Robot.robotmap.MotorR2Control.set(SpeedR * constant);
+    Robot.robotmap.MotorL1Control.set(-SpeedL * 0.65);
+		Robot.robotmap.MotorL2Control.set(-SpeedL * 0.65);
+		Robot.robotmap.MotorR1Control.set(SpeedR * 0.65);
+    Robot.robotmap.MotorR2Control.set(SpeedR * 0.65);
 
     //System.out.println(Robot.robotmap.encoderL1.getVelocity());
-
-    
-    
   }
 
   public void getEncoderRot() {

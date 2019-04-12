@@ -26,7 +26,7 @@ public class AutoAssistCenteringSubsystem extends Subsystem
   public void FindTarget()
   {
 
-      Robot.drivesub.TankDrive(-0.3, 0.3, 0.65);
+      Robot.drivesub.TankDrive(-0.3, 0.3);
 
   }
 
@@ -35,11 +35,11 @@ public class AutoAssistCenteringSubsystem extends Subsystem
 
     if(Output > 0)
     {
-      Robot.drivesub.TankDrive(0, 0 + Output, 0.65);
+      Robot.drivesub.TankDrive(0, 0 + Output);
     }
     else if(Output < 0)
     {
-      Robot.drivesub.TankDrive(0 + -Output, 0, 0.65);
+      Robot.drivesub.TankDrive(0 + -Output, 0);
     }
 
   }

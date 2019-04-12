@@ -33,14 +33,13 @@ public class DriveCommand extends Command {
     //These will be usefull to the drive subsystem 
     double SpeedLY = Robot.oi.StickL.getY();
     double SpeedR = Robot.oi.StickR.getY();
-    double SpeedLX = Robot.oi.StickL.getX();
-    double constant = ClimbModeCommand.DriveConstant;
+    double SpeedLX = Robot.PIDTurn;
 
     boolean ArcadeModeOn = Robot.oi.ArcadeMode.get();
     //System.out.println("Left: " + SpeedL + ", Right: " + SpeedR);
     if(ArcadeModeOn == false)
     {
-    Robot.drivesub.TankDrive(SpeedLY, SpeedR, constant);
+    Robot.drivesub.TankDrive(SpeedLY, SpeedR);
     }
     else
     {
