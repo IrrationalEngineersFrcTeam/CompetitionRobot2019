@@ -23,13 +23,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.ElevatorSliderSubsystem;
-import frc.robot.subsystems.ClimbModeSubsystem;
 import frc.robot.subsystems.ElevatorSubsystem;
 import frc.robot.subsystems.HatchMechanismSubsystem;
-import frc.robot.subsystems.VisionLineCentering;
-import frc.robot.subsystems.VisionTargetCentering;
-import frc.robot.subsystems.AutoAssistCenteringSubsystem;
-import frc.robot.subsystems.CargoSubsystem;
 
 public class Robot extends TimedRobot {
   //This is more or less the main class, all the others are defined here!
@@ -38,13 +33,8 @@ public class Robot extends TimedRobot {
   public static DriveSubsystem drivesub;
   public static HatchMechanismSubsystem hatchmechsub;
   public static ElevatorSubsystem elevatesub;
-  public static ClimbModeSubsystem climbmodesub;
   public static ArmSubsystem armsub;
   public static ElevatorSliderSubsystem elevateslidesub;
-  public static AutoAssistCenteringSubsystem autocenteringsub;
-  public static CargoSubsystem cargoSub;
-  public static VisionLineCentering lineCentering;
-  public static VisionTargetCentering targetCentering;
   public static NetworkTableInstance inst;
   public static NetworkTable smartDashboardTable;
   public static NetworkTable camera1Table;
@@ -70,14 +60,10 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
   navx = new AHRS(SerialPort.Port.kMXP); 
-  targetCentering = new VisionTargetCentering();
-  autocenteringsub = new AutoAssistCenteringSubsystem();
   hatchmechsub = new HatchMechanismSubsystem();
   elevatesub = new ElevatorSubsystem();
-  climbmodesub = new ClimbModeSubsystem();
   armsub = new ArmSubsystem();
   elevateslidesub = new ElevatorSliderSubsystem();
-  cargoSub = new CargoSubsystem();
   robotmap = new RobotMap();
   drivesub = new DriveSubsystem();
   inst = NetworkTableInstance.getDefault();

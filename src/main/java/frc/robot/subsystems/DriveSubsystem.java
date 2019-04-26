@@ -81,29 +81,5 @@ public class DriveSubsystem extends Subsystem {
 
   }
 
- //This bit of code is trying to make it so that the acceleration is smooth WARNING:
-  //IT DOES NOT WORK YET.
-  public double[] AccelSmoothing(Double JoySpeedL, Double JoySpeedR)
-  {
-
-    //The time it takes to get to target speed
-    int x = 370;
-
-    //The target speeds, which are the top speeds in the equation
-    double TargetL = JoySpeedL;
-    double TargetR = JoySpeedR;
-
-    // this is the formula: f(x) = L/1 + e^-1*k*(x-x0)  , k = 0.04 
-   double exponent = 1 + Math.exp( -1 * 0.04 * x);
-
-    //This is the the result of the formula
-    double TargetCL = TargetL/exponent;
-    double TargetCR = TargetR/exponent;
-
-    double[] arraySpeeds = {TargetCL, TargetCR};
-
-    return arraySpeeds;
-
-  }
 
 }

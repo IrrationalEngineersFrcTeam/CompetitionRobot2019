@@ -18,16 +18,10 @@ import frc.robot.commandGroups.PlaceHatchLevel_3;
 import frc.robot.commandGroups.RetractAllHatchElements;
 import frc.robot.commands.ArmExtendCommand;
 import frc.robot.commands.ArmRetractCommand;
-import frc.robot.commands.CargoInCommand;
-import frc.robot.commands.CargoOutCommand;
-import frc.robot.commands.CenterOnVisTargetCommand;
 import frc.robot.commands.ElevatorUpCommand;
-import frc.robot.commands.FindVisionTargetCommand;
 import frc.robot.commands.ElevatorDownCommand;
 import frc.robot.commands.SlideElevatorForwardCommand;
 import frc.robot.commands.SlideElevatorBackCommand;
-import frc.robot.commands.DriveOverLineCommand;
-import frc.robot.commands.ClimbModeCommand;
 
 public class OI {
   //This creates any joysticks we will use to drive the robot,
@@ -56,24 +50,31 @@ public class OI {
   public Button ElevatorUp;
   public Button ElevatorDown;
 
-  //Another test button for testing the pid code that centers the robot over the line
-  //Vision buttons
-  public Button RunPIDTarget;
-  public Button FindVisTarget;
-  public Button CenterOnLine;
-  public Button RetractAll;
-
-  //This button will go unused because I am to lazy to delete the entire subsystem/everything
-  //public Button releaseClimberArms;
-
-  //Cargo button
-  public Button CargoIn;
-  public Button CargoOut;
-
-  public Button climbModeButton;
-
   //Arcade drive button
   public Button ArcadeMode;
+
+
+  /*
+  
+  This is a list of all the buttons that are being used and what commands they go to:
+    StickL (Left joystick):
+      1 ------------------ ArcadeMode
+      2 ------------------ ArmRectractCommand
+      3 ------------------ ArmExtendCommand
+      4 ------------------ RetractAllHatchElements
+      11 ----------------- SlideElevatorForwardCommand
+      16 ----------------- SlideElevatorBackCommand
+    
+    StickR(Right joystick):
+      1 ------------------- HoldHatchOpenCommand
+      2 ------------------- PlaceHatchLevel_1
+      3 ------------------- PlaceHatchLevel_2
+      4 ------------------- PlaceHatchLevel_3
+      5 ------------------- ElevatorUpCommand
+      10 ------------------ ElevatorDownCommand
+      
+  
+  */
 
   public OI() {
     //This tells the robot what ports these joysticks will be connected to, 
@@ -84,7 +85,6 @@ public class OI {
     //This is where we tie the code buttons to the buttons on the joysticks
     //In this case the hatch button
     HatchHoldOpenButton = new JoystickButton(StickR, 1);
-    climbModeButton = new JoystickButton(StickL, 1);
     
     //These buttons are for testing purposes, they will be phased out in the future
     ArmExtendButton = new JoystickButton(StickL, 3);
@@ -100,29 +100,16 @@ public class OI {
     PlaceHatchLevel_1_Button = new JoystickButton(StickR, 2);
     PlaceHatchLevel_2_Button = new JoystickButton(StickR, 3);
     PlaceHatchLevel_3_Button = new JoystickButton(StickR, 4);
-    RetractAll = new JoystickButton(StickL, 4);
+    RetractAllHatchElements = new JoystickButton(StickL, 4);
 
     //Spool should be wound on the left
     ElevatorDown = new JoystickButton(StickR, 10);
     ElevatorUp = new JoystickButton(StickR, 5);
 
-    //These are the PID buttons
-    RunPIDTarget = new JoystickButton(StickL, 7);
-    FindVisTarget = new JoystickButton(StickL, 8);
-    CenterOnLine = new JoystickButton(StickR, 11);
-
-    //cargo commands
-    CargoIn = new JoystickButton(StickL, 5);
-    CargoOut = new JoystickButton(StickL, 6);
-
     //Arcade drive Button
-    ArcadeMode = new JoystickButton(StickR, 6);
+    ArcadeMode = new JoystickButton(StickL, 1);
 
-    //releaseClimberArms = new JoystickButton(StickL, 6);
-
-    //This method binds the button to a command
-    //In this case the hatch button
-    //I edited it so that HatchGrab is now useless
+    //Hatch hold command
     HatchHoldOpenButton.whileHeld(new HatchHoldOpenCommand());
 
     //These are temporary
@@ -137,23 +124,11 @@ public class OI {
     PlaceHatchLevel_1_Button.whenPressed(new PlaceHatchLevel_1());
     PlaceHatchLevel_2_Button.whenPressed(new PlaceHatchLevel_2());
     PlaceHatchLevel_3_Button.whenPressed(new PlaceHatchLevel_3());
-    RetractAll.whenPressed(new RetractAllHatchElements());
-
-    climbModeButton.whileHeld(new ClimbModeCommand());
+    RetractAllHatchElements.whenPressed(new RetractAllHatchElements());
 
     //Elevator commands
     ElevatorUp.whileHeld(new ElevatorUpCommand());
     ElevatorDown.whileHeld(new ElevatorDownCommand());
 
-    //PID commands
-    RunPIDTarget.whileHeld(new CenterOnVisTargetCommand());
-    FindVisTarget.whenPressed(new FindVisionTargetCommand());
-    CenterOnLine.whileHeld(new DriveOverLineCommand());
-
-    //Cargo Commands
-    CargoIn.whileHeld(new CargoInCommand());
-    CargoOut.whileHeld(new CargoOutCommand());
-
-    //releaseClimberArms.whileHeld(new ReleaseClimberArmsCommand());
   }
 }

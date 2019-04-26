@@ -31,8 +31,8 @@ public class DriveCommand extends Command {
   protected void execute() {
     //This creates two variables that are equal to the angle of joysticks
     //These will be usefull to the drive subsystem 
-    double SpeedLY = Robot.oi.StickL.getY();
     double SpeedR = Robot.oi.StickR.getY();
+    double SpeedLY = Robot.oi.StickL.getY();
     double SpeedLX = Robot.PIDTurn;
 
     boolean ArcadeModeOn = Robot.oi.ArcadeMode.get();
