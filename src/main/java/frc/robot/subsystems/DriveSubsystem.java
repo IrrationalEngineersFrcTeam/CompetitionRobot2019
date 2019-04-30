@@ -74,10 +74,10 @@ public class DriveSubsystem extends Subsystem {
       RightSide = DrivForward + DriveTurn;
     }
 
-    Robot.robotmap.MotorL1Control.set(-LeftSide * 0.65);
-		Robot.robotmap.MotorL2Control.set(-LeftSide * 0.65);
-		Robot.robotmap.MotorR1Control.set(RightSide * 0.65);
-    Robot.robotmap.MotorR2Control.set(RightSide * 0.65);
+    Robot.robotmap.MotorL1Control.set(-LeftSide * 0.4);
+		Robot.robotmap.MotorL2Control.set(-LeftSide * 0.4);
+		Robot.robotmap.MotorR1Control.set(RightSide * 0.4);
+    Robot.robotmap.MotorR2Control.set(RightSide * 0.4);
 
   }
 
