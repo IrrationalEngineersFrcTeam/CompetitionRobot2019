@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 
-
 public class DriveCommand extends Command {
 
   public DriveCommand() {
@@ -36,7 +35,7 @@ public class DriveCommand extends Command {
     double SpeedLX = Robot.PIDTurn;
 
     boolean ArcadeModeOn = Robot.oi.ArcadeMode.get();
-    //System.out.println("Left: " + SpeedL + ", Right: " + SpeedR);
+
     if(ArcadeModeOn == false)
     {
     Robot.drivesub.TankDrive(SpeedLY, SpeedR);

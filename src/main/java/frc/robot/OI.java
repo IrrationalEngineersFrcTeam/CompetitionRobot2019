@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.HatchHoldOpenCommand;
-//import frc.robot.commands.ReleaseClimberArmsCommand;
 import frc.robot.commandGroups.PlaceHatchLevel_1;
 import frc.robot.commandGroups.PlaceHatchLevel_2;
 import frc.robot.commandGroups.PlaceHatchLevel_3;
@@ -56,22 +55,22 @@ public class OI {
 
   /*
   
-  This is a list of all the buttons that are being used and what commands they go to:
-    StickL (Left joystick):
-      1 ------------------ ArcadeMode
-      2 ------------------ ArmRectractCommand
-      3 ------------------ ArmExtendCommand
-      4 ------------------ RetractAllHatchElements
-      11 ----------------- SlideElevatorForwardCommand
-      16 ----------------- SlideElevatorBackCommand
+    This is a list of all the buttons that are being used and what commands they go to:
+      StickL (Left joystick):
+        1 ------------------ ArcadeMode
+        2 ------------------ ArmRectractCommand
+        3 ------------------ ArmExtendCommand
+        4 ------------------ RetractAllHatchElements
+        11 ----------------- SlideElevatorForwardCommand
+        16 ----------------- SlideElevatorBackCommand
     
-    StickR(Right joystick):
-      1 ------------------- HoldHatchOpenCommand
-      2 ------------------- PlaceHatchLevel_1
-      3 ------------------- PlaceHatchLevel_2
-      4 ------------------- PlaceHatchLevel_3
-      5 ------------------- ElevatorUpCommand
-      10 ------------------ ElevatorDownCommand
+      StickR(Right joystick):
+        1 ------------------- HoldHatchOpenCommand
+        2 ------------------- PlaceHatchLevel_1
+        3 ------------------- PlaceHatchLevel_2
+        4 ------------------- PlaceHatchLevel_3
+        5 ------------------- ElevatorUpCommand
+        10 ------------------ ElevatorDownCommand
       
   
   */
